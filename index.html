@@ -88,7 +88,31 @@ document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefau
 document.querySelectorAll('.quick button').forEach(b=>b.addEventListener('click',()=>processQuestion(b.dataset.q)));
 const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;
 document.getElementById('startVoice').onclick=()=>{openAssistant();if(!SpeechRecognition){status.textContent='Voice recognition unavailable in this browser. Try Chrome and allow microphone access.';return;}recognition=new SpeechRecognition();recognition.lang='en-IN';recognition.interimResults=false;recognition.maxAlternatives=1;status.textContent='Listening…';recognition.onresult=e=>{const q=e.results[0][0].transcript;status.textContent='Heard: '+q;processQuestion(q,true);const s=q.toLowerCase();let target=null;if(/about|who|introduc/.test(s))target='about';else if(/skill/.test(s))target='skills';else if(/project|work/.test(s))target='projects';else if(/education|college|study/.test(s))target='education';else if(/contact|email|phone|github|linkedin/.test(s))target='contact';else if(/home|top/.test(s))target='home';if(target)document.getElementById(target).scrollIntoView({behavior:'smooth'});};recognition.onerror=e=>status.textContent='Voice error: '+e.error+'. Check microphone permission.';recognition.onend=()=>{if(status.textContent==='Listening…')status.textContent='Ready · Text and voice available';};recognition.start();};
-document.getElementById('stopVoice').onclick=()=>{if(recognition)recognition.stop();if('speechSynthesis'in window)window.speechSynthesis.cancel();status.textContent='Voice stopped';};
+document.getElementById('stopVoice').onclick=()=>{if(recognition)recognition.stop();if('speechSynthesis'in 
+function speakText(text) {
+  const synth = window.speechSynthesis;
+  synth.cancel();
+
+  const msg = new SpeechSynthesisUtterance(text);
+  msg.lang = "en-IN";
+  msg.rate = 0.92;
+  msg.pitch = 0.85;
+  msg.volume = 1;
+
+  const voices = synth.getVoices();
+
+  const indianVoice = voices.find(v =>
+    v.lang === "en-IN" &&
+    /Google.*India|Microsoft.*India/i.test(v.name)
+  );
+
+  if (indianVoice) {
+    msg.voice = indianVoice;
+  }
+
+  synth.speak(msg);
+}
+
 document.getElementById('hearIntro').onclick=()=>{const intro='Hi, I am Karan Raj, a BCA student at RKDF University in Ranchi. I am exploring cybersecurity, ethical hacking, and Generative AI. Thank you for visiting my portfolio.';if('speechSynthesis'in window)speak(intro);else alert(intro);};
 </script>
 </body>
