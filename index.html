@@ -4,116 +4,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
 
 <title>Karan Raj | Cybersecurity & Generative AI</title>
 
-<meta name="description" content="Karan Raj - BCA student passionate about Cybersecurity, Ethical Hacking and Generative AI.">
-<meta name="theme-color" content="#080808">
+<meta name="description" content="Karan Raj - BCA student, Cybersecurity enthusiast and Generative AI learner.">
 
 <style>
-/* ========== GLOBAL ========== */
-
+/* ========== RESET ========== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
-:root {
-    --bg: #080808;
-    --card: #111111;
-    --white: #ffffff;
-    --gray: #aaaaaa;
-    --border: #292929;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-    background: var(--bg);
-    color: var(--white);
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f5f5;
     line-height: 1.7;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
 }
 
 button {
     cursor: pointer;
-    font-family: inherit;
 }
 
 .container {
-    width: 90%;
-    max-width: 1150px;
+    width: min(1100px, 90%);
     margin: auto;
 }
 
 section {
-    padding: 100px 0;
-    scroll-margin-top: 75px;
+    padding: 85px 0;
 }
 
 .section-title {
-    font-size: 38px;
-    margin-bottom: 12px;
+    font-size: clamp(28px, 5vw, 42px);
+    margin-bottom: 15px;
 }
 
 .section-subtitle {
-    color: var(--gray);
+    color: #999;
     margin-bottom: 40px;
 }
 
 .highlight {
-    border-bottom: 2px solid white;
-}
-
-.dark-section {
-    background: #0c0c0c;
+    color: #fff;
+    border-bottom: 2px solid #fff;
 }
 
 /* ========== NAVBAR ========== */
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    background: #101010;
+    border-bottom: 1px solid #292929;
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    background: rgba(8, 8, 8, 0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
 }
 
 .navbar {
-    min-height: 75px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    font-size: 25px;
+    font-family: Georgia, serif;
+    font-size: 32px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
 .logo span {
-    color: #777777;
+    color: #aaa;
 }
 
 .nav-links {
     display: flex;
+    align-items: center;
+    gap: 28px;
     list-style: none;
-    gap: 18px;
 }
 
 .nav-links a {
-    color: #cccccc;
-    font-size: 13px;
+    color: #ccc;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -121,73 +113,72 @@ header {
     color: white;
 }
 
-.menu-btn {
+.menu-toggle {
     display: none;
-    border: none;
     background: transparent;
+    border: none;
     color: white;
-    font-size: 27px;
+    font-size: 28px;
 }
 
-/* ========== HOME ========== */
+/* ========== HERO ========== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    padding-top: 120px;
+    background:
+        radial-gradient(ellipse at 80% 20%, #202020 0%, transparent 50%),
+        #080808;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 750px;
 }
 
 .hero-label {
-    font-size: 13px;
+    color: #aaa;
+    font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #aaaaaa;
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(40px, 8vw, 76px);
+    font-size: clamp(38px, 8vw, 76px);
     line-height: 1.15;
     margin-bottom: 25px;
 }
 
 .hero h1 span {
-    color: #888888;
+    color: #999;
 }
 
 .hero-description {
+    color: #bbb;
     max-width: 650px;
-    color: #bbbbbb;
     font-size: 17px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
-.hero-buttons {
+.buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
 .btn {
-    display: inline-block;
     padding: 12px 25px;
-    border: 1px solid white;
-    border-radius: 5px;
-    font-weight: 600;
+    border: 1px solid #fff;
+    background: #fff;
+    color: #080808;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.btn-primary {
-    background: white;
-    color: black;
-}
-
-.btn-primary:hover {
+.btn:hover {
     background: transparent;
     color: white;
 }
@@ -206,13 +197,13 @@ header {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 45px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
     align-items: center;
 }
 
 .about-text {
-    color: #bbbbbb;
+    color: #bbb;
 }
 
 .about-text p {
@@ -220,32 +211,29 @@ header {
 }
 
 .about-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.info-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 22px;
+    border: 1px solid #292929;
+    padding: 25px;
     border-radius: 8px;
-    transition: 0.3s;
+    background: #101010;
 }
 
-.info-card:hover {
-    border-color: #777777;
-    transform: translateY(-3px);
+.info-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #292929;
 }
 
-.info-card h3 {
-    font-size: 15px;
-    margin-bottom: 8px;
+.info-item:last-child {
+    border-bottom: none;
 }
 
-.info-card p {
-    color: var(--gray);
-    font-size: 13px;
+.info-item strong {
+    display: block;
+    color: white;
+}
+
+.info-item span {
+    color: #aaa;
+    font-size: 14px;
 }
 
 /* ========== SKILLS ========== */
@@ -253,25 +241,20 @@ header {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
 }
 
 .skill-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 28px;
+    background: #111;
+    border: 1px solid #292929;
+    padding: 25px;
     border-radius: 8px;
     transition: 0.3s;
 }
 
 .skill-card:hover {
-    transform: translateY(-5px);
-    border-color: #777777;
-}
-
-.skill-icon {
-    font-size: 28px;
-    margin-bottom: 15px;
+    border-color: #777;
+    transform: translateY(-4px);
 }
 
 .skill-card h3 {
@@ -279,7 +262,7 @@ header {
 }
 
 .skill-card p {
-    color: var(--gray);
+    color: #aaa;
     font-size: 14px;
 }
 
@@ -288,416 +271,282 @@ header {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    gap: 22px;
 }
 
 .project-card {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: #111;
+    border: 1px solid #292929;
     padding: 30px;
     border-radius: 8px;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: #777777;
-}
-
-.project-tag {
-    display: inline-block;
-    color: #cccccc;
-    border: 1px solid #444444;
-    padding: 4px 12px;
-    font-size: 12px;
-    border-radius: 30px;
-    margin-bottom: 18px;
 }
 
 .project-card h3 {
     margin-bottom: 12px;
-    font-size: 21px;
 }
 
 .project-card p {
-    color: var(--gray);
+    color: #aaa;
     font-size: 14px;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 20px;
 }
 
 .project-link {
-    display: inline-block;
     font-size: 14px;
-    font-weight: bold;
-    border-bottom: 1px solid white;
+    text-decoration: underline;
 }
 
-/* ========== EDUCATION ========== */
+/* ========== EXPERIENCE & CERTIFICATIONS ========== */
 
-.education-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid white;
-    padding: 25px;
-    border-radius: 8px;
+.timeline-item {
+    border-left: 2px solid #444;
+    padding: 5px 0 25px 25px;
+    margin-left: 10px;
 }
 
-.education-card h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
-.education-card p {
-    color: var(--gray);
+.timeline-item h3 {
+    font-size: 19px;
     margin-bottom: 5px;
 }
 
-/* ========== EXPERIENCE ========== */
-
-.timeline {
-    display: grid;
-    gap: 22px;
-}
-
-.timeline-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 3px solid white;
-    padding: 25px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.timeline-card:hover {
-    border-color: #777777;
-    transform: translateY(-3px);
-}
-
-.timeline-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.timeline-card p {
-    color: var(--gray);
+.timeline-item p {
+    color: #aaa;
     font-size: 14px;
 }
 
 .timeline-date {
-    display: inline-block;
-    color: white !important;
-    font-size: 12px !important;
-    border: 1px solid #444444;
-    border-radius: 20px;
-    padding: 3px 12px;
-    margin-bottom: 12px;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
 }
 
-/* ========== CERTIFICATIONS ========== */
+.manage-panel {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
 
-.certifications-grid {
+.manage-panel h3 {
+    margin-bottom: 18px;
+}
+
+.form-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.cert-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 8px;
-    transition: 0.3s;
-    overflow-wrap: anywhere;
-}
-
-.cert-card:hover {
-    transform: translateY(-5px);
-    border-color: #777777;
-}
-
-.cert-icon {
-    font-size: 30px;
-}
-
-.cert-card h3 {
-    margin: 12px 0;
-    font-size: 19px;
-}
-
-.cert-card p {
-    color: var(--gray);
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.cert-link {
-    display: inline-block;
-    border-bottom: 1px solid white;
-    font-size: 13px;
-    margin-top: 10px;
-}
-
-/* ========== ADD CONTENT BUTTONS ========== */
-
-.admin-panel {
-    margin-top: 35px;
-    padding: 25px;
-    border: 1px dashed #555555;
-    border-radius: 8px;
-    background: #101010;
-}
-
-.admin-panel h3 {
-    margin-bottom: 15px;
-}
-
-.admin-buttons {
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
 
-.admin-btn {
-    padding: 10px 18px;
-    color: white;
-    background: #1b1b1b;
-    border: 1px solid #555555;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.admin-btn:hover {
-    background: white;
-    color: black;
-}
-
-.form-box {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    background: #161616;
-    border: 1px solid #444444;
-    border-radius: 8px;
-}
-
-.form-box.active {
-    display: block;
-}
-
-.form-box input,
-.form-box textarea {
+.form-control {
     width: 100%;
     padding: 12px;
-    margin: 8px 0 15px;
     background: #080808;
+    border: 1px solid #333;
     color: white;
-    border: 1px solid #444444;
-    border-radius: 5px;
-    font-family: inherit;
+    border-radius: 4px;
+    margin-bottom: 12px;
 }
 
-.form-box label {
-    font-size: 13px;
-    color: #cccccc;
+.form-control:focus {
+    outline: 1px solid #aaa;
 }
 
-.form-box .admin-btn {
-    margin-right: 8px;
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-grid .full {
+    grid-column: 1 / -1;
 }
 
 /* ========== CONTACT ========== */
 
-.contact-section {
-    background: #0c0c0c;
-    text-align: center;
+.contact-box {
+    border: 1px solid #292929;
+    background: #111;
+    padding: 35px;
+    border-radius: 8px;
 }
 
-.contact-content {
-    max-width: 650px;
-    margin: auto;
-}
-
-.contact-content p {
-    color: var(--gray);
-    margin-bottom: 30px;
+.contact-box p {
+    color: #aaa;
+    margin-bottom: 25px;
 }
 
 .contact-links {
     display: flex;
-    justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
-}
-
-/* ========== FOOTER ========== */
-
-footer {
-    padding: 25px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    color: #888888;
-    font-size: 13px;
+    gap: 15px;
 }
 
 /* ========== VOICE ASSISTANT ========== */
 
 .voice-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
+    bottom: 22px;
+    right: 22px;
+    z-index: 999;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
-    border: 1px solid white;
     background: white;
     color: black;
-    font-size: 25px;
-    z-index: 9999;
-    box-shadow: 0 0 20px rgba(255,255,255,0.15);
-    transition: 0.3s;
+    border: none;
+    font-size: 22px;
+    box-shadow: 0 0 20px #ffffff30;
 }
 
 .voice-btn:hover {
-    transform: scale(1.08);
-    background: black;
-    color: white;
-}
-
-.voice-btn.listening {
-    background: #222222;
-    color: white;
-    animation: pulse 1.3s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(255,255,255,0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255,255,255,0);
-    }
+    background: #ccc;
 }
 
 .voice-status {
     position: fixed;
-    bottom: 100px;
-    right: 25px;
-    max-width: 280px;
-    background: #161616;
-    border: 1px solid #444444;
+    bottom: 88px;
+    right: 22px;
+    z-index: 999;
+    background: #191919;
+    border: 1px solid #333;
+    color: white;
     padding: 12px 18px;
     border-radius: 8px;
     font-size: 13px;
-    color: white;
     display: none;
-    z-index: 9999;
+    max-width: 250px;
 }
 
-/* ========== ANIMATIONS ========== */
+/* ========== FOOTER ========== */
 
-.fade-in {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+footer {
+    border-top: 1px solid #292929;
+    padding: 25px 0;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
 }
 
-.fade-in.visible {
+/* ========== ANIMATION ========== */
+
+/* Content remains visible even if JavaScript fails */
+.reveal {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 1000px) {
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-}
-
 @media (max-width: 768px) {
+
     section {
-        padding: 75px 0;
+        padding: 65px 0;
     }
 
-    .section-title {
-        font-size: 30px;
+    .navbar {
+        height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .nav-links {
         display: none;
         position: absolute;
-        top: 75px;
+        top: 65px;
         left: 0;
         width: 100%;
-        background: #080808;
+        background: #101010;
         flex-direction: column;
+        align-items: stretch;
         gap: 0;
-        padding: 15px 5%;
-        border-bottom: 1px solid var(--border);
+        padding: 10px 5%;
+        border-bottom: 1px solid #333;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .nav-links li {
-        padding: 10px 0;
-    }
-
-    .menu-btn {
+    .nav-links a {
         display: block;
+        padding: 13px 0;
+        border-bottom: 1px solid #222;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .skills-grid,
-    .projects-grid,
-    .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-info {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero h1 {
-        font-size: 44px;
+    .hero {
+        min-height: 75vh;
     }
 
     .hero-description {
         font-size: 15px;
     }
 
-    .voice-btn {
-        width: 55px;
-        height: 55px;
-        bottom: 18px;
-        right: 18px;
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid .full {
+        grid-column: auto;
+    }
+
+    .contact-box {
+        padding: 25px;
     }
 }
 
-@media (max-width: 420px) {
-    .about-info {
+@media (max-width: 450px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .skills-grid {
         grid-template-columns: 1fr;
     }
 
     .hero h1 {
-        font-size: 37px;
+        font-size: 40px;
     }
 
     .btn {
-        padding: 10px 16px;
-        font-size: 14px;
+        padding: 11px 17px;
+        font-size: 13px;
+    }
+
+    .voice-btn {
+        width: 48px;
+        height: 48px;
+        bottom: 16px;
+        right: 16px;
     }
 }
 </style>
@@ -705,306 +554,413 @@ footer {
 
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- ========== NAVIGATION ========== -->
 
 <header>
-<nav class="navbar container">
+    <nav class="navbar container">
 
-    <a href="#home" class="logo">KR<span>.</span></a>
+        <a href="#home" class="logo">KR<span>.</span></a>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+            ☰
+        </button>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-</nav>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
 </header>
 
-<!-- ========== HOME ========== -->
+<!-- ========== HERO ========== -->
 
-<section class="hero container" id="home">
-<div class="hero-content fade-in">
+<section class="hero" id="home">
+    <div class="container hero-content reveal">
 
-    <p class="hero-label">Hello, welcome to my portfolio</p>
+        <p class="hero-label">Hello, welcome to my portfolio</p>
 
-    <h1>
-        I'm Karan Raj.<br>
-        <span>Cybersecurity & Gen AI Enthusiast.</span>
-    </h1>
+        <h1>
+            I'm Karan Raj.<br>
+            <span>Future Cybersecurity Professional.</span>
+        </h1>
 
-    <p class="hero-description">
-        I'm a BCA student passionate about Cybersecurity,
-        Ethical Hacking and Generative AI. I enjoy exploring
-        technology, building projects and learning new skills
-        to solve real-world problems.
-    </p>
+        <p class="hero-description">
+            I'm a BCA student passionate about Cybersecurity,
+            Ethical Hacking and Generative AI. I love exploring
+            technology, learning new skills and building innovative projects.
+        </p>
 
-    <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">Explore My Projects</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <div class="buttons">
+            <a href="#projects" class="btn">Explore My Projects</a>
+
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
     </div>
-
-</div>
 </section>
 
 <!-- ========== ABOUT ========== -->
 
 <section id="about">
-<div class="container">
+    <div class="container">
 
-    <h2 class="section-title fade-in">
-        About <span class="highlight">Me</span>
-    </h2>
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
 
-    <p class="section-subtitle fade-in">Get to know me and my journey.</p>
+        <p class="section-subtitle">A little introduction</p>
 
-    <div class="about-grid">
+        <div class="about-grid">
 
-        <div class="about-text fade-in">
-            <p>
-                My name is Karan Raj. I am pursuing a Bachelor
-                of Computer Applications (BCA) at RKDF University,
-                Ranchi.
-            </p>
+            <div class="about-text">
 
-            <p>
-                I am passionate about Cybersecurity, Ethical
-                Hacking, Web Development and Generative AI.
-                I enjoy understanding how technology works
-                and how it can be used to solve problems.
-            </p>
+                <p>
+                    Hello! I'm Karan Raj, currently pursuing Bachelor
+                    of Computer Applications (BCA) at RKDF University,
+                    Ranchi.
+                </p>
 
-            <p>
-                My goal is to become a skilled cybersecurity
-                professional and explore the potential of
-                Artificial Intelligence in digital security.
-            </p>
-        </div>
+                <p>
+                    My primary interests are Cybersecurity, Ethical
+                    Hacking, Artificial Intelligence and Generative AI.
+                    I am continuously improving my technical skills
+                    through practical learning and projects.
+                </p>
 
-        <div class="about-info">
+                <p>
+                    My goal is to become a skilled cybersecurity
+                    professional and contribute to making the digital
+                    world safer.
+                </p>
 
-            <div class="info-card fade-in">
-                <h3>🎓 Education</h3>
-                <p>Bachelor of Computer Applications</p>
             </div>
 
-            <div class="info-card fade-in">
-                <h3>💻 Interests</h3>
-                <p>Cybersecurity & Generative AI</p>
-            </div>
+            <div class="about-info">
 
-            <div class="info-card fade-in">
-                <h3>📍 Location</h3>
-                <p>Ranchi, Jharkhand, India</p>
-            </div>
+                <div class="info-item">
+                    <strong>Name</strong>
+                    <span>Karan Raj</span>
+                </div>
 
-            <div class="info-card fade-in">
-                <h3>🚀 Career Goal</h3>
-                <p>Cybersecurity Professional</p>
+                <div class="info-item">
+                    <strong>Education</strong>
+                    <span>Bachelor of Computer Applications (BCA)</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>University</strong>
+                    <span>RKDF University, Ranchi</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Graduation</strong>
+                    <span>2027</span>
+                </div>
+
+                <div class="info-item">
+                    <strong>Career Interest</strong>
+                    <span>Cybersecurity & Generative AI</span>
+                </div>
+
             </div>
 
         </div>
     </div>
-</div>
 </section>
 
 <!-- ========== SKILLS ========== -->
 
-<section class="dark-section" id="skills">
-<div class="container">
+<section id="skills" style="background:#0d0d0d;">
+    <div class="container">
 
-    <h2 class="section-title fade-in">
-        My <span class="highlight">Skills</span>
-    </h2>
+        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
 
-    <p class="section-subtitle fade-in">
-        Technologies and domains I am learning.
-    </p>
+        <p class="section-subtitle">
+            Technologies and tools I am learning and working with.
+        </p>
 
-    <div class="skills-grid">
+        <div class="skills-grid">
 
-        <div class="skill-card fade-in">
-            <div class="skill-icon">💻</div>
-            <h3>Programming</h3>
-            <p>C, C++, Java and programming fundamentals.</p>
+            <div class="skill-card">
+                <h3>C Programming</h3>
+                <p>Fundamentals, logic building and problem solving.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>Object-oriented programming and programming concepts.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Core Java and object-oriented development.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Creating structured and accessible web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Responsive layouts and modern web design.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cybersecurity</h3>
+                <p>Learning security fundamentals and ethical practices.</p>
+            </div>
+
         </div>
-
-        <div class="skill-card fade-in">
-            <div class="skill-icon">🌐</div>
-            <h3>Web Development</h3>
-            <p>HTML, CSS, JavaScript and responsive web design.</p>
-        </div>
-
-        <div class="skill-card fade-in">
-            <div class="skill-icon">🔐</div>
-            <h3>Cybersecurity</h3>
-            <p>Cybersecurity fundamentals, digital security and ethical hacking concepts.</p>
-        </div>
-
-        <div class="skill-card fade-in">
-            <div class="skill-icon">🤖</div>
-            <h3>Generative AI</h3>
-            <p>AI tools, prompt engineering and AI-powered applications.</p>
-        </div>
-
-        <div class="skill-card fade-in">
-            <div class="skill-icon">🗄️</div>
-            <h3>Database</h3>
-            <p>SQL, DBMS and database management concepts.</p>
-        </div>
-
-        <div class="skill-card fade-in">
-            <div class="skill-icon">⚙️</div>
-            <h3>Developer Tools</h3>
-            <p>Git, GitHub, VS Code and development workflows.</p>
-        </div>
-
     </div>
-</div>
 </section>
 
 <!-- ========== PROJECTS ========== -->
 
 <section id="projects">
-<div class="container">
+    <div class="container">
 
-    <h2 class="section-title fade-in">
-        My <span class="highlight">Projects</span>
-    </h2>
+        <h2 class="section-title">My <span class="highlight">Projects</span></h2>
 
-    <p class="section-subtitle fade-in">
-        Projects and practical learning experiences.
-    </p>
-
-    <div class="projects-grid">
-
-        <div class="project-card fade-in">
-            <span class="project-tag">Cybersecurity + AI</span>
-            <h3>Cybersecurity & Gen AI Portfolio</h3>
-
-            <p>
-                A professional portfolio website showcasing
-                my technical skills, projects, learning journey
-                and career goals.
-            </p>
-
-            <a href="https://github.com/karanraj3106-cmyk"
-               target="_blank" rel="noopener"
-               class="project-link">View GitHub →</a>
-        </div>
-
-        <div class="project-card fade-in">
-            <span class="project-tag">JavaScript</span>
-            <h3>Browser Voice Assistant</h3>
-
-            <p>
-                A browser-based voice assistant built using
-                JavaScript Speech Recognition and Speech
-                Synthesis for voice-based interaction.
-            </p>
-
-            <a href="#home" class="project-link">Explore Portfolio →</a>
-        </div>
-
-    </div>
-</div>
-</section>
-
-<!-- ========== EDUCATION ========== -->
-
-<section id="education" class="dark-section">
-<div class="container">
-
-    <h2 class="section-title fade-in">
-        My <span class="highlight">Education</span>
-    </h2>
-
-    <p class="section-subtitle fade-in">
-        Academic background and learning journey.
-    </p>
-
-    <div class="education-card fade-in">
-        <h3>Bachelor of Computer Applications (BCA)</h3>
-        <p>RKDF University, Ranchi, Jharkhand</p>
-        <p>Expected Graduation: 2027</p>
-        <p>
-            Relevant subjects: Programming, DBMS,
-            Web Development, Operating Systems
-            and Computer Fundamentals.
+        <p class="section-subtitle">
+            Some projects from my learning journey.
         </p>
-    </div>
 
-</div>
+        <div class="projects-grid">
+
+            <div class="project-card">
+
+                <h3>Cybersecurity + Generative AI Portfolio</h3>
+
+                <p>
+                    A personal portfolio website showcasing my skills,
+                    projects, learning journey and interest in
+                    Cybersecurity and Generative AI. Includes an
+                    interactive voice assistant.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AI</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/karanraj3106-cmyk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View GitHub →
+                </a>
+
+            </div>
+
+            <div class="project-card">
+
+                <h3>More Projects Coming Soon</h3>
+
+                <p>
+                    I am continuously learning and developing
+                    new projects. More exciting work will be
+                    added to this portfolio soon.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Learning</span>
+                    <span class="tag">Development</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <!-- ========== EXPERIENCE ========== -->
 
-<section id="experience">
-<div class="container">
+<section id="experience" style="background:#0d0d0d;">
+    <div class="container">
 
-    <h2 class="section-title fade-in">
-        My <span class="highlight">Experience</span>
-    </h2>
+        <h2 class="section-title">My <span class="highlight">Experience</span></h2>
 
-    <p class="section-subtitle fade-in">
-        Professional experience and practical learning.
-    </p>
+        <p class="section-subtitle">
+            My professional journey and learning experience.
+        </p>
 
-    <div class="timeline" id="experienceList">
+        <div id="experienceList">
 
-        <div class="timeline-card fade-in">
-            <span class="timeline-date">2026 – Present</span>
-            <h3>Cybersecurity & AI Learner</h3>
-            <p>Self-Learning / Personal Projects</p>
-            <p>
-                Learning cybersecurity fundamentals, ethical
-                hacking concepts, Generative AI and web
-                development through hands-on practice
-                and personal projects.
-            </p>
+            <div class="timeline-item">
+                <h3>BCA Student</h3>
+                <p class="timeline-date">2024 – Present</p>
+                <p>
+                    Pursuing Bachelor of Computer Applications
+                    and developing programming, web development
+                    and cybersecurity skills.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Add experience using this form -->
+
+        <div class="manage-panel">
+
+            <h3>＋ Add Experience</h3>
+
+            <form id="experienceForm">
+
+                <input class="form-control"
+                       id="expTitle"
+                       placeholder="Job title / Experience title"
+                       required>
+
+                <input class="form-control"
+                       id="expDate"
+                       placeholder="Duration (e.g. Jan 2026 – Present)"
+                       required>
+
+                <textarea class="form-control"
+                          id="expDescription"
+                          rows="3"
+                          placeholder="Describe your experience"
+                          required></textarea>
+
+                <button type="submit" class="btn">
+                    Add Experience
+                </button>
+
+            </form>
+
         </div>
 
     </div>
-
-    <!-- Add experience button -->
-    <div class="admin-panel">
-        <h3>Update Your Experience</h3>
-
-        <div class="admin-buttons">
-            <button class="admin-btn" onclick="toggleForm('experienceForm')">
-                + Add Experience
-            </button>
-        </div>
-
-        <div class="form-box" id="experienceForm">
-
-            <label>Job / Internship / Experience Title</label>
-            <input type="text" id="expTitle" placeholder="e.g. Cybersecurity Intern">
-
-            <label>Company / Organization</label>
-            <input type="text" id="expCompany" placeholder="Organization name">
-
-            <label>Duration</label>
-            <input type="text" id="expDate" placeholder="e.g. Jan 2026 - Mar 2026">
-
-            <label>Description</label>
-            <textarea id="expDescription" rows="4" placeholder="Describe your experience"></textarea>
-
-            <button class="admin-btn" onclick="addExperience()">Save Experience</button>
-            <button class="admin-btn" onclick="toggleForm('experienceForm')">Cancel</button>
-        </div>
-    </div>
-
-</div>
 </section>
 
 <!-- ========== CERTIFICATIONS ========== -->
 
-<s
+<section id="certifications">
+    <div class="container">
+
+        <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
+
+        <p class="section-subtitle">
+            Certifications, courses and achievements.
+        </p>
+
+        <div id="certificationList">
+
+            <div class="timeline-item">
+                <h3>Certifications Coming Soon</h3>
+                <p>
+                    I am currently learning and working towards
+                    professional certifications.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Add certifications using this form -->
+
+        <div class="manage-panel">
+
+            <h3>＋ Add Certification</h3>
+
+            <form id="certificationForm">
+
+                <input class="form-control"
+                       id="certTitle"
+                       placeholder="Certification name"
+                       required>
+
+                <input class="form-control"
+                       id="certIssuer"
+                       placeholder="Issuing organization"
+                       required>
+
+                <input class="form-control"
+                       id="certDate"
+                       placeholder="Date (e.g. October 2026)"
+                       required>
+
+                <input class="form-control"
+                       id="certLink"
+                       type="url"
+                       placeholder="Certificate URL (optional)">
+
+                <button type="submit" class="btn">
+                    Add Certification
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+
+<section id="contact" style="background:#0d0d0d;">
+    <div class="container">
+
+        <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+
+        <p class="section-subtitle">
+            Let's connect and discuss technology, projects and opportunities.
+        </p>
+
+        <div class="contact-box">
+
+            <p>
+                I'm open to connecting with fellow learners,
+                developers and cybersecurity enthusiasts.
+                Feel free to reach out!
+            </p>
+
+            <div class="contact-links">
+
+                <a class="btn"
+                   href="mailto:karanraj31021@gmail.com">
+                    Email Me
+                </a>
+
+                <a class="btn btn-outline"
+                   href="https://github.com/karanraj3106-cmyk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <a class="btn btn-outline"
+                   href="https://www.linkedin.com/in/karan-raj-97a9b4393/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+
+<footer>
+    <div class="container">
+        <p>
+            © <span id="year"></span> Karan Raj.
+            Designed & Developed with passion.
+        </p>
+    </div>
+</footer>
+
+<!-- ========== VOICE ASSISTANT ========== -->
+
+<bu
