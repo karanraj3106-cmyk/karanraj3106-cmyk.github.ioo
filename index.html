@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+
+<title>Karan Raj | Cybersecurity & Generative AI</title>
+
+<meta name="description" content="Karan Raj - BCA student, Cybersecurity enthusiast, Ethical Hacker and Generative AI learner.">
+
+<style>
+
+/* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    font-size: clamp(28px, 5vw, 44px);
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    border-bottom: 2px solid white;
+}
+
+.dark-section {
+    background: #0d0d0d;
+}
+
+
+/* ==========================================
+   2. NAVBAR
+========================================== */
+
+header {
+    background: rgba(12, 12, 12, 0.96);
+    border-bottom: 1px solid #292929;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #888;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #bbb;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+
+/* ==========================================
+   3. HERO SECTION
+========================================== */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 25%,
+            #202020 0%,
+            transparent 55%
+        ),
+        #080808;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: slideInLeft 1s ease;
+}
+
+.hero-label {
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.name-highlight {
+    background: linear-gradient(90deg, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-heading {
+    font-size: clamp(22px, 3vw, 34px);
+    color: #aaa;
+    min-height: 55px;
+    margin-bottom: 20px;
+}
+
+#typingText {
+    color: #fff;
+}
+
+.cursor {
+    color: white;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-description {
+    color: #aaa;
+    max-width: 600px;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #080808;
+    border: 1px solid white;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ==========================================
+   4. PROFILE PHOTO & ANIMATION
+========================================== */
+
+.hero-image-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: slideInRight 1s ease;
+}
+
+.image-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: white;
+    filter: blur(100px);
+    opacity: 0.15;
+    border-radius: 50%;
+    animation: glowPulse 4s infinite ease-in-out;
+}
+
+.profile-image {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 360px;
+    height: 460px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    border-radius: 180px 180px 25px 25px;
+    border: 2px solid #333;
+
+    box-shadow: 0 0 40px #ffffff15;
+
+    animation: floatImage 4s infinite ease-in-out;
+}
+
+.image-caption {
+    position: relative;
+    z-index: 3;
+
+    margin-top: 20px;
+    padding: 10px 18px;
+
+    border: 1px solid #333;
+    border-radius: 30px;
+
+    background: #111;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    background: #7dff9b;
+    border-radius: 50%;
+
+    margin-right: 8px;
+
+    box-shadow: 0 0 10px #7dff9b;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.08;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.2;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================
+   5. ABOUT SECTION
+========================================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about-text {
+    color: #aaa;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+}
+
+.about-info {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.info-item {
+    padding: 13px 0;
+    border-bottom: 1px solid #292929;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    display: block;
+    color: white;
+}
+
+.info-item span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   6. SKILLS
+========================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    border-color: #777;
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   7. PROJECTS
+========================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 30px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: #666;
+    transform: translateY(-4px);
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+}
+
+.project-link {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   8. EXPERIENCE & CERTIFICATIONS
+========================================== */
+
+.timeline-item {
+    border-left: 2px solid #444;
+    padding: 5px 0 25px 25px;
+    margin-left: 10px;
+}
+
+.timeline-item h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.timeline-item p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.timeline-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.manage-panel {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.manage-panel h3 {
+    margin-bottom: 18px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+
+    background: #080808;
+    border: 1px solid #333;
+    border-radius: 4px;
+
+    color: white;
+    margin-bottom: 12px;
+}
+
+.form-control:focus {
+    outline: 1px solid #aaa;
+}
+
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-grid .full {
+    grid-column: 1 / -1;
+}
+
+
+/* ==========================================
+   9. CONTACT
+========================================== */
+
+.contact-box {
+    background: #111;
+    border: 1px solid #292929;
+    padding: 35px;
+    border-radius: 8px;
+}
+
+.contact-box p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* ==========================================
+   10. VOICE ASSISTANT
+========================================== */
+
+.voice-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 9999;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    border: 1px solid white;
+
+    background: white;
+    color: black;
+
+    font-size: 24px;
+
+    animation: micGlow 2s infinite;
+
+    transition: 0.3s;
+}
+
+.voice-btn:hover {
+    transform: scale(1.1);
+    background: #ddd;
+}
+
+.voice-btn.mic-active {
+    background: #ccc;
+    animation: micPulse 0.6s infinite alternate;
+}
+
+@keyframes micGlow {
+    0% {
+        box-shadow: 0 0 0 0 #ffffff40;
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px #ffffff00;
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 #ffffff00;
+    }
+}
+
+@keyframes micPulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.voice-status {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+
+    z-index: 9999;
+
+    background: #191919;
+    border: 1px solid #333;
+
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    display: none;
+
+    max-width: 260px;
+}
+
+
+/* ==========================================
+   11. FOOTER
+========================================== */
+
+footer {
+    border-top: 1px solid #292929;
+    padding: 25px 0;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   12. MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background: #101010;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+        padding: 10px 5%;
+
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        padding-top: 45px;
+        padding-bottom: 55px;
+
+        gap: 35px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-image-wrapper {
+        order: 0;
+    }
+
+    .profile-image {
+        max-width: 260px;
+        height: 340px;
+    }
+
+    .hero-grid .buttons {
+        justify-content: center;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .typing-heading {
+        font-size: 23px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid .full {
+        grid-column: auto;
+    }
+
+    .contact-box {
+        padding: 25px;
+    }
+
+    .voice-btn {
+        width: 52px;
+        height: 52px;
+
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .voice-status {
+        bottom: 85px;
+        right: 18px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .profile-image {
+        max-width: 230px;
+        height: 300px;
+    }
+
+    .btn {
+        padding: 11px 17px;
+        font-size: 13px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<header>
+
+    <nav class="navbar container">
+
+        <a href="#home" class="logo">KR<span>.</span></a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            ☰
+
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- ==========================================
+     HERO SECTION
+========================================== -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                WELCOME TO MY PORTFOLIO
+            </p>
+
+            <h1>
+                Hi, I'm <span class="name-highlight">Karan Raj</span>
+            </h1>
+
+            <h2 class="typing-heading">
+                I'm into <span id="typingText"></span><span class="cursor">|</span>
+            </h2>
+
+            <p class="hero-description">
+
+                BCA Student | Cybersecurity Enthusiast | Generative AI Learner.
+
+                Passionate about technology, ethical hacking,
+                artificial intelligence and building innovative
+                digital experiences.
+
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    Explore My Work
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFILE PHOTO -->
+
+        <div class="hero-image-wrapper">
+
+            <div class="image-glow"></div>
+
+            <img
+                src="karan.jpg"
+                alt="Karan Raj - Profile Photo"
+                class="profile-image">
+
+            <div class="image-caption">
+
+                <span class="status-dot"></span>
+
+                Open to learning & opportunities
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     ABOUT SECTION
+========================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About <span class="highlight">Me</span>
+        </h2>
+
+        <p class="section-subtitle">
+            A little introduction about myself.
+        </p>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+
+                    Hello! I'm Karan Raj, currently pursuing
+                    Bachelor of Computer Applications (BCA)
+                    at RKDF University, Ranchi.
+
+                </p>
+
+                <p>
+
+                    My primary interests are Cybersecurity,
+                    Ethical Hacking, Artificial Intelligence
+                    and Generative AI.
+
+                    I am continuously improving my technical
+                    skills through practical learning,
+                    experimentation and projects.
+
+                </p>
+
+                <p>
+
+                    My goal is to become a skilled
+                    cybersecurity professional and contribute
+                    to making the digital world safer.
+
+                </p>
+
+            </div>
+
+
+            <div class="about-info">
+
+                <div class="info-item">
+
+                    <strong>Name</strong>
+
+                    <span>Karan Raj</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>Education</strong>
+
+                    <span>Bachelor of Computer Applications</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>University</strong>
+
+                    <span>RKDF University, Ranchi</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>Graduation</strong>
+
+                    <span>2027</span>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <strong>Career Interests</strong>
+
+                    <span>Cybersecurity & Generative AI</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     SKILLS SECTION
+========================================== -->
+
+<section class="dark-section" id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            My <span class="highlight">Skills</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Technologies and tools I am learning.
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>C Programming</h3>
+
+                <p>
+                    Programming fundamentals,
+                    logic building and problem solving.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>C++</h3>
+
+                <p>
+                    Object-oriented programming
+                    and programming concepts.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Java</h3>
+
+                <p>
+                    Core Java and object-oriented
+                    development.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>HTML</h3>
+
+                <p>
+                    Creating structured
+                    and accessible web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>CSS</h3>
+
+                <p>
+                    Responsive layouts
+                    and modern web design.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>Cybersecurity</h3>
+
+                <p>
+                    Learning security fundamentals,
+                    networking and ethical practices.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     PROJECTS SECTION
+========================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            My <span class="highlight">Projects</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Projects from my learning journey.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <div class="p
