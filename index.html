@@ -1,19 +1,16 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Karan Raj | Cybersecurity & Generative AI</title>
 
-<meta name="description" content="Karan Raj - BCA student, Cybersecurity enthusiast and Generative AI learner.">
+<meta name="description" content="Karan Raj - BCA student passionate about Cybersecurity, Ethical Hacking and Generative AI.">
 <meta name="theme-color" content="#080808">
 
 <style>
-
 /* ========== GLOBAL ========== */
 
 * {
@@ -30,41 +27,7 @@
     --gray: #aaaaaa;
     --border: #292929;
 }
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const elements = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-
-    elements.forEach(function (element) {
-        observer.observe(element);
-    });
-
-    // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-    });
-
-    // Close menu after clicking a link
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            navLinks.classList.remove("active");
-        });
-    });
-
-});
-</script>
 body {
     background: var(--bg);
     color: var(--white);
@@ -91,6 +54,7 @@ button {
 
 section {
     padding: 100px 0;
+    scroll-margin-top: 75px;
 }
 
 .section-title {
@@ -107,6 +71,9 @@ section {
     border-bottom: 2px solid white;
 }
 
+.dark-section {
+    background: #0c0c0c;
+}
 
 /* ========== NAVBAR ========== */
 
@@ -116,13 +83,13 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(8, 8, 8, 0.95);
+    background: rgba(8, 8, 8, 0.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
 }
 
 .navbar {
-    height: 75px;
+    min-height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -161,7 +128,6 @@ header {
     color: white;
     font-size: 27px;
 }
-
 
 /* ========== HOME ========== */
 
@@ -236,7 +202,6 @@ header {
     color: black;
 }
 
-
 /* ========== ABOUT ========== */
 
 .about-grid {
@@ -283,12 +248,7 @@ header {
     font-size: 13px;
 }
 
-
 /* ========== SKILLS ========== */
-
-.dark-section {
-    background: #0c0c0c;
-}
 
 .skills-grid {
     display: grid;
@@ -322,7 +282,6 @@ header {
     color: var(--gray);
     font-size: 14px;
 }
-
 
 /* ========== PROJECTS ========== */
 
@@ -373,7 +332,6 @@ header {
     border-bottom: 1px solid white;
 }
 
-
 /* ========== EDUCATION ========== */
 
 .education-card {
@@ -393,7 +351,6 @@ header {
     color: var(--gray);
     margin-bottom: 5px;
 }
-
 
 /* ========== EXPERIENCE ========== */
 
@@ -436,7 +393,6 @@ header {
     margin-bottom: 12px;
 }
 
-
 /* ========== CERTIFICATIONS ========== */
 
 .certifications-grid {
@@ -451,6 +407,7 @@ header {
     padding: 25px;
     border-radius: 8px;
     transition: 0.3s;
+    overflow-wrap: anywhere;
 }
 
 .cert-card:hover {
@@ -480,6 +437,73 @@ header {
     margin-top: 10px;
 }
 
+/* ========== ADD CONTENT BUTTONS ========== */
+
+.admin-panel {
+    margin-top: 35px;
+    padding: 25px;
+    border: 1px dashed #555555;
+    border-radius: 8px;
+    background: #101010;
+}
+
+.admin-panel h3 {
+    margin-bottom: 15px;
+}
+
+.admin-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.admin-btn {
+    padding: 10px 18px;
+    color: white;
+    background: #1b1b1b;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.admin-btn:hover {
+    background: white;
+    color: black;
+}
+
+.form-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #161616;
+    border: 1px solid #444444;
+    border-radius: 8px;
+}
+
+.form-box.active {
+    display: block;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    background: #080808;
+    color: white;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-box label {
+    font-size: 13px;
+    color: #cccccc;
+}
+
+.form-box .admin-btn {
+    margin-right: 8px;
+}
 
 /* ========== CONTACT ========== */
 
@@ -505,7 +529,6 @@ header {
     flex-wrap: wrap;
 }
 
-
 /* ========== FOOTER ========== */
 
 footer {
@@ -515,7 +538,6 @@ footer {
     color: #888888;
     font-size: 13px;
 }
-
 
 /* ========== VOICE ASSISTANT ========== */
 
@@ -551,11 +573,9 @@ footer {
     0% {
         box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
     }
-
     70% {
         box-shadow: 0 0 0 15px rgba(255,255,255,0);
     }
-
     100% {
         box-shadow: 0 0 0 0 rgba(255,255,255,0);
     }
@@ -576,7 +596,6 @@ footer {
     z-index: 9999;
 }
 
-
 /* ========== ANIMATIONS ========== */
 
 .fade-in {
@@ -590,23 +609,19 @@ footer {
     transform: translateY(0);
 }
 
-
 /* ========== RESPONSIVE ========== */
 
-@media (max-width: 900px) {
-
+@media (max-width: 1000px) {
     .nav-links {
-        gap: 12px;
+        gap: 10px;
     }
 
     .nav-links a {
         font-size: 12px;
     }
-
 }
 
 @media (max-width: 768px) {
-
     section {
         padding: 75px 0;
     }
@@ -645,16 +660,14 @@ footer {
         gap: 30px;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .skills-grid,
+    .projects-grid,
     .certifications-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-info {
+        grid-template-columns: 1fr 1fr;
     }
 
     .hero h1 {
@@ -671,9 +684,22 @@ footer {
         bottom: 18px;
         right: 18px;
     }
-
 }
 
+@media (max-width: 420px) {
+    .about-info {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
 </style>
 </head>
 
@@ -682,13 +708,11 @@ footer {
 <!-- ========== NAVBAR ========== -->
 
 <header>
-
 <nav class="navbar container">
 
     <a href="#home" class="logo">KR<span>.</span></a>
 
     <ul class="nav-links" id="navLinks">
-
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -697,27 +721,18 @@ footer {
         <li><a href="#experience">Experience</a></li>
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
-
     </ul>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
-        ☰
-    </button>
-
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
 </nav>
-
 </header>
-
 
 <!-- ========== HOME ========== -->
 
 <section class="hero container" id="home">
-
 <div class="hero-content fade-in">
 
-    <p class="hero-label">
-        Hello, welcome to my portfolio
-    </p>
+    <p class="hero-label">Hello, welcome to my portfolio</p>
 
     <h1>
         I'm Karan Raj.<br>
@@ -725,49 +740,34 @@ footer {
     </h1>
 
     <p class="hero-description">
-
         I'm a BCA student passionate about Cybersecurity,
         Ethical Hacking and Generative AI. I enjoy exploring
         technology, building projects and learning new skills
         to solve real-world problems.
-
     </p>
 
     <div class="hero-buttons">
-
-        <a href="#projects" class="btn btn-primary">
-            Explore My Projects
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-            Contact Me
-        </a>
-
+        <a href="#projects" class="btn btn-primary">Explore My Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
     </div>
 
 </div>
-
 </section>
-
 
 <!-- ========== ABOUT ========== -->
 
 <section id="about">
-
 <div class="container">
 
     <h2 class="section-title fade-in">
         About <span class="highlight">Me</span>
     </h2>
 
-    <p class="section-subtitle fade-in">
-        Get to know me and my journey.
-    </p>
+    <p class="section-subtitle fade-in">Get to know me and my journey.</p>
 
     <div class="about-grid">
 
         <div class="about-text fade-in">
-
             <p>
                 My name is Karan Raj. I am pursuing a Bachelor
                 of Computer Applications (BCA) at RKDF University,
@@ -786,7 +786,6 @@ footer {
                 professional and explore the potential of
                 Artificial Intelligence in digital security.
             </p>
-
         </div>
 
         <div class="about-info">
@@ -812,18 +811,13 @@ footer {
             </div>
 
         </div>
-
     </div>
-
 </div>
-
 </section>
-
 
 <!-- ========== SKILLS ========== -->
 
 <section class="dark-section" id="skills">
-
 <div class="container">
 
     <h2 class="section-title fade-in">
@@ -873,16 +867,12 @@ footer {
         </div>
 
     </div>
-
 </div>
-
 </section>
-
 
 <!-- ========== PROJECTS ========== -->
 
 <section id="projects">
-
 <div class="container">
 
     <h2 class="section-title fade-in">
@@ -896,9 +886,7 @@ footer {
     <div class="projects-grid">
 
         <div class="project-card fade-in">
-
             <span class="project-tag">Cybersecurity + AI</span>
-
             <h3>Cybersecurity & Gen AI Portfolio</h3>
 
             <p>
@@ -908,20 +896,12 @@ footer {
             </p>
 
             <a href="https://github.com/karanraj3106-cmyk"
-               target="_blank"
-               rel="noopener"
-               class="project-link">
-
-                View GitHub →
-
-            </a>
-
+               target="_blank" rel="noopener"
+               class="project-link">View GitHub →</a>
         </div>
 
         <div class="project-card fade-in">
-
             <span class="project-tag">JavaScript</span>
-
             <h3>Browser Voice Assistant</h3>
 
             <p>
@@ -930,23 +910,16 @@ footer {
                 Synthesis for voice-based interaction.
             </p>
 
-            <a href="#home" class="project-link">
-                Explore Portfolio →
-            </a>
-
+            <a href="#home" class="project-link">Explore Portfolio →</a>
         </div>
 
     </div>
-
 </div>
-
 </section>
-
 
 <!-- ========== EDUCATION ========== -->
 
 <section id="education" class="dark-section">
-
 <div class="container">
 
     <h2 class="section-title fade-in">
@@ -958,30 +931,22 @@ footer {
     </p>
 
     <div class="education-card fade-in">
-
         <h3>Bachelor of Computer Applications (BCA)</h3>
-
         <p>RKDF University, Ranchi, Jharkhand</p>
-
         <p>Expected Graduation: 2027</p>
-
         <p>
             Relevant subjects: Programming, DBMS,
             Web Development, Operating Systems
             and Computer Fundamentals.
         </p>
-
     </div>
 
 </div>
-
 </section>
-
 
 <!-- ========== EXPERIENCE ========== -->
 
 <section id="experience">
-
 <div class="container">
 
     <h2 class="section-title fade-in">
@@ -992,137 +957,54 @@ footer {
         Professional experience and practical learning.
     </p>
 
-    <div class="timeline">
+    <div class="timeline" id="experienceList">
 
         <div class="timeline-card fade-in">
-
             <span class="timeline-date">2026 – Present</span>
-
             <h3>Cybersecurity & AI Learner</h3>
-
             <p>Self-Learning / Personal Projects</p>
-
             <p>
                 Learning cybersecurity fundamentals, ethical
                 hacking concepts, Generative AI and web
                 development through hands-on practice
                 and personal projects.
             </p>
-
         </div>
-
-        <!-- ADD YOUR INTERNSHIP OR JOB HERE -->
-
-        <!--
-        <div class="timeline-card fade-in">
-
-            <span class="timeline-date">Month Year – Month Year</span>
-
-            <h3>Internship / Job Title</h3>
-
-            <p>Company Name</p>
-
-            <p>
-                Add your responsibilities, skills
-                and achievements here.
-            </p>
-
-        </div>
-        -->
 
     </div>
 
+    <!-- Add experience button -->
+    <div class="admin-panel">
+        <h3>Update Your Experience</h3>
+
+        <div class="admin-buttons">
+            <button class="admin-btn" onclick="toggleForm('experienceForm')">
+                + Add Experience
+            </button>
+        </div>
+
+        <div class="form-box" id="experienceForm">
+
+            <label>Job / Internship / Experience Title</label>
+            <input type="text" id="expTitle" placeholder="e.g. Cybersecurity Intern">
+
+            <label>Company / Organization</label>
+            <input type="text" id="expCompany" placeholder="Organization name">
+
+            <label>Duration</label>
+            <input type="text" id="expDate" placeholder="e.g. Jan 2026 - Mar 2026">
+
+            <label>Description</label>
+            <textarea id="expDescription" rows="4" placeholder="Describe your experience"></textarea>
+
+            <button class="admin-btn" onclick="addExperience()">Save Experience</button>
+            <button class="admin-btn" onclick="toggleForm('experienceForm')">Cancel</button>
+        </div>
+    </div>
+
 </div>
-
 </section>
-
 
 <!-- ========== CERTIFICATIONS ========== -->
 
-<section id="certifications" class="dark-section">
-
-<div class="container">
-
-    <h2 class="section-title fade-in">
-        My <span class="highlight">Certifications</span>
-    </h2>
-
-    <p class="section-subtitle fade-in">
-        Certificates, courses and professional achievements.
-    </p>
-
-    <div class="certifications-grid">
-
-        <!-- CERTIFICATE 1 -->
-
-        <div class="cert-card fade-in">
-
-            <div class="cert-icon">🔐</div>
-
-            <span class="project-tag">Cybersecurity</span>
-
-            <h3>Cybersecurity Certificate</h3>
-
-            <p>Issuing Organization: Add Organization Name</p>
-
-            <p>Issue Date: Add Month & Year</p>
-
-            <a href="#certifications"
-               class="cert-link">
-
-                Add Certificate Link →
-
-            </a>
-
-        </div>
-
-
-        <!-- CERTIFICATE 2 -->
-
-        <div class="cert-card fade-in">
-
-            <div class="cert-icon">🤖</div>
-
-            <span class="project-tag">Generative AI</span>
-
-            <h3>Generative AI Certificate</h3>
-
-            <p>Issuing Organization: Add Organization Name</p>
-
-            <p>Issue Date: Add Month & Year</p>
-
-            <a href="#certifications"
-               class="cert-link">
-
-                Add Certificate Link →
-
-            </a>
-
-        </div>
-
-        <!-- COPY cert-card TO ADD MORE CERTIFICATES -->
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ========== CONTACT ========== -->
-
-<section class="contact-section" id="contact">
-
-<div class="container contact-content fade-in">
-
-    <h2 class="section-title">
-        Let's <span class="highlight">Connect</span>
-    </h2>
-
-    <p>
-        I am open to learning opportunities, collaborations
-        and connecting with people in technology.
-        Feel free to reach out to me.
-    </p>
-
-    
+<s
