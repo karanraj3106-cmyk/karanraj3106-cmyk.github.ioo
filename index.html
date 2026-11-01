@@ -8,13 +8,10 @@
 
 <title>Karan Raj | Cybersecurity & Generative AI</title>
 
-<meta name="description" content="Karan Raj - BCA student, Cybersecurity enthusiast, Ethical Hacker and Generative AI learner.">
+<meta name="description" content="Karan Raj - BCA student, Cybersecurity enthusiast and Generative AI learner.">
 
 <style>
-
-/* ==========================================
-   1. GLOBAL STYLES
-========================================== */
+/* ================= GLOBAL ================= */
 
 * {
     margin: 0;
@@ -24,20 +21,20 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 85px;
+    scroll-padding-top: 80px;
 }
 
 body {
     background: #080808;
-    color: #ffffff;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.7;
     overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 button, input, textarea {
@@ -58,7 +55,7 @@ section {
 }
 
 .section-title {
-    font-size: clamp(28px, 5vw, 44px);
+    font-size: clamp(30px, 5vw, 45px);
     margin-bottom: 12px;
 }
 
@@ -75,32 +72,56 @@ section {
     background: #0d0d0d;
 }
 
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #fff;
+    color: #080808;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
 
-/* ==========================================
-   2. NAVBAR
-========================================== */
+.btn:hover {
+    background: transparent;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #080808;
+}
+
+/* ================= NAVBAR ================= */
 
 header {
-    background: rgba(12, 12, 12, 0.96);
-    border-bottom: 1px solid #292929;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: rgba(10,10,10,.96);
+    border-bottom: 1px solid #292929;
     backdrop-filter: blur(12px);
 }
 
 .navbar {
     height: 75px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-family: Georgia, serif;
     font-size: 32px;
     font-weight: bold;
-    letter-spacing: 1px;
 }
 
 .logo span {
@@ -110,14 +131,14 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 22px;
     list-style: none;
 }
 
 .nav-links a {
     color: #bbb;
     font-size: 14px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .nav-links a:hover {
@@ -132,43 +153,33 @@ header {
     font-size: 28px;
 }
 
-
-/* ==========================================
-   3. HERO SECTION
-========================================== */
+/* ================= HERO ================= */
 
 .hero {
     min-height: 85vh;
     display: flex;
     align-items: center;
-
     background:
-        radial-gradient(
-            ellipse at 80% 25%,
-            #202020 0%,
-            transparent 55%
-        ),
+        radial-gradient(ellipse at 80% 25%, #202020, transparent 55%),
         #080808;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.2fr .8fr;
     align-items: center;
     gap: 50px;
     min-height: 80vh;
 }
 
 .hero-content {
-    max-width: 700px;
-    animation: slideInLeft 1s ease;
+    animation: slideLeft 1s ease;
 }
 
 .hero-label {
     color: #aaa;
     font-size: 13px;
     letter-spacing: 3px;
-    text-transform: uppercase;
     margin-bottom: 20px;
 }
 
@@ -197,20 +208,12 @@ header {
 }
 
 .cursor {
-    color: white;
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    animation: blink .7s infinite;
 }
 
 .hero-description {
     color: #aaa;
     max-width: 600px;
-    font-size: 16px;
     margin-bottom: 30px;
 }
 
@@ -220,88 +223,48 @@ header {
     gap: 15px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: white;
-    color: #080808;
-    border: 1px solid white;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: transparent;
-    color: white;
-    transform: translateY(-3px);
-}
-
-.btn-outline {
-    background: transparent;
-    color: white;
-}
-
-.btn-outline:hover {
-    background: white;
-    color: black;
-}
-
-
-/* ==========================================
-   4. PROFILE PHOTO & ANIMATION
-========================================== */
+/* ================= PROFILE PHOTO ================= */
 
 .hero-image-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    animation: slideInRight 1s ease;
+    animation: slideRight 1s ease;
 }
 
 .image-glow {
     position: absolute;
     width: 280px;
     height: 280px;
-    background: white;
+    background: #fff;
     filter: blur(100px);
-    opacity: 0.15;
+    opacity: .15;
     border-radius: 50%;
-    animation: glowPulse 4s infinite ease-in-out;
+    animation: glowPulse 4s infinite;
 }
 
 .profile-image {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 360px;
     height: 460px;
-
     object-fit: cover;
     object-position: center top;
-
     border-radius: 180px 180px 25px 25px;
     border: 2px solid #333;
-
     box-shadow: 0 0 40px #ffffff15;
-
     animation: floatImage 4s infinite ease-in-out;
 }
 
 .image-caption {
     position: relative;
     z-index: 3;
-
     margin-top: 20px;
     padding: 10px 18px;
-
     border: 1px solid #333;
     border-radius: 30px;
-
     background: #111;
     color: #ccc;
     font-size: 12px;
@@ -309,68 +272,41 @@ header {
 
 .status-dot {
     display: inline-block;
-
     width: 8px;
     height: 8px;
-
     background: #7dff9b;
     border-radius: 50%;
-
     margin-right: 8px;
-
     box-shadow: 0 0 10px #7dff9b;
 }
 
-@keyframes floatImage {
-    0%, 100% {
-        transform: translateY(0);
-    }
+/* ================= ANIMATIONS ================= */
 
-    50% {
-        transform: translateY(-12px);
-    }
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 @keyframes glowPulse {
-    0%, 100% {
-        opacity: 0.08;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.2;
-        transform: scale(1.15);
-    }
+    0%, 100% { opacity: .08; transform: scale(1); }
+    50% { opacity: .2; transform: scale(1.15); }
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-
-/* ==========================================
-   5. ABOUT SECTION
-========================================== */
+/* ================= ABOUT ================= */
 
 .about-grid {
     display: grid;
@@ -405,7 +341,7 @@ header {
 
 .info-item strong {
     display: block;
-    color: white;
+    color: #fff;
 }
 
 .info-item span {
@@ -413,10 +349,7 @@ header {
     font-size: 14px;
 }
 
-
-/* ==========================================
-   6. SKILLS
-========================================== */
+/* ================= SKILLS ================= */
 
 .skills-grid {
     display: grid;
@@ -429,7 +362,7 @@ header {
     border: 1px solid #292929;
     padding: 25px;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .skill-card:hover {
@@ -446,10 +379,7 @@ header {
     font-size: 14px;
 }
 
-
-/* ==========================================
-   7. PROJECTS
-========================================== */
+/* ================= PROJECTS ================= */
 
 .projects-grid {
     display: grid;
@@ -462,7 +392,7 @@ header {
     border: 1px solid #292929;
     padding: 30px;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .project-card:hover {
@@ -500,10 +430,7 @@ header {
     text-decoration: underline;
 }
 
-
-/* ==========================================
-   8. EXPERIENCE & CERTIFICATIONS
-========================================== */
+/* ================= EXPERIENCE & CERTIFICATIONS ================= */
 
 .timeline-item {
     border-left: 2px solid #444;
@@ -542,11 +469,9 @@ header {
 .form-control {
     width: 100%;
     padding: 12px;
-
     background: #080808;
     border: 1px solid #333;
     border-radius: 4px;
-
     color: white;
     margin-bottom: 12px;
 }
@@ -569,10 +494,21 @@ header {
     grid-column: 1 / -1;
 }
 
+.item-delete {
+    background: transparent;
+    color: #aaa;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 5px 12px;
+    margin-top: 10px;
+}
 
-/* ==========================================
-   9. CONTACT
-========================================== */
+.item-delete:hover {
+    color: white;
+    border-color: white;
+}
+
+/* ================= CONTACT ================= */
 
 .contact-box {
     background: #111;
@@ -592,32 +528,22 @@ header {
     gap: 15px;
 }
 
-
-/* ==========================================
-   10. VOICE ASSISTANT
-========================================== */
+/* ================= VOICE ASSISTANT ================= */
 
 .voice-btn {
     position: fixed;
     bottom: 25px;
     right: 25px;
-
     z-index: 9999;
-
-    width: 60px;
-    height: 60px;
-
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     border: 1px solid white;
-
     background: white;
     color: black;
-
-    font-size: 24px;
-
+    font-size: 25px;
     animation: micGlow 2s infinite;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .voice-btn:hover {
@@ -626,60 +552,71 @@ header {
 }
 
 .voice-btn.mic-active {
-    background: #ccc;
-    animation: micPulse 0.6s infinite alternate;
+    background: #aaa;
+    animation: micPulse .5s infinite alternate;
 }
 
 @keyframes micGlow {
-    0% {
-        box-shadow: 0 0 0 0 #ffffff40;
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px #ffffff00;
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 #ffffff00;
-    }
+    0% { box-shadow: 0 0 0 0 #ffffff40; }
+    70% { box-shadow: 0 0 0 15px #ffffff00; }
+    100% { box-shadow: 0 0 0 0 #ffffff00; }
 }
 
 @keyframes micPulse {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.15);
-    }
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
 }
 
 .voice-status {
     position: fixed;
-    bottom: 100px;
+    bottom: 105px;
     right: 25px;
-
     z-index: 9999;
-
     background: #191919;
-    border: 1px solid #333;
-
+    border: 1px solid #444;
     color: white;
-
     padding: 12px 18px;
     border-radius: 8px;
-
     font-size: 13px;
-
     display: none;
-
-    max-width: 260px;
+    max-width: 280px;
 }
 
+.voice-waves {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 105px;
+    z-index: 9998;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+}
 
-/* ==========================================
-   11. FOOTER
-========================================== */
+.voice-waves.active {
+    display: flex;
+}
+
+.voice-waves span {
+    display: block;
+    width: 4px;
+    height: 12px;
+    background: white;
+    border-radius: 10px;
+    animation: wave  .5s infinite alternate;
+}
+
+.voice-waves span:nth-child(2) { animation-delay: .1s; }
+.voice-waves span:nth-child(3) { animation-delay: .2s; }
+.voice-waves span:nth-child(4) { animation-delay: .3s; }
+.voice-waves span:nth-child(5) { animation-delay: .4s; }
+
+@keyframes wave {
+    from { height: 8px; }
+    to { height: 35px; }
+}
+
+/* ================= FOOTER ================= */
 
 footer {
     border-top: 1px solid #292929;
@@ -689,13 +626,9 @@ footer {
     font-size: 13px;
 }
 
-
-/* ==========================================
-   12. MOBILE RESPONSIVE
-========================================== */
+/* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-
     section {
         padding: 65px 0;
     }
@@ -710,21 +643,15 @@ footer {
 
     .nav-links {
         display: none;
-
         position: absolute;
         top: 65px;
         left: 0;
-
         width: 100%;
-
         background: #101010;
-
         flex-direction: column;
         align-items: stretch;
-
         gap: 0;
         padding: 10px 5%;
-
         border-bottom: 1px solid #333;
     }
 
@@ -745,20 +672,12 @@ footer {
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
-
-        padding-top: 45px;
-        padding-bottom: 55px;
-
+        padding: 45px 0 55px;
         gap: 35px;
     }
 
-    .hero-content {
-        order: 1;
-    }
-
-    .hero-image-wrapper {
-        order: 0;
-    }
+    .hero-content { order: 1; }
+    .hero-image-wrapper { order: 0; }
 
     .profile-image {
         max-width: 260px;
@@ -803,23 +722,24 @@ footer {
     }
 
     .voice-btn {
-        width: 52px;
-        height: 52px;
-
+        width: 55px;
+        height: 55px;
         bottom: 18px;
         right: 18px;
     }
 
     .voice-status {
-        bottom: 85px;
+        bottom: 90px;
         right: 18px;
     }
 
+    .voice-waves {
+        right: 85px;
+        bottom: 25px;
+    }
 }
 
-
 @media (max-width: 450px) {
-
     .container {
         width: 90%;
     }
@@ -841,350 +761,272 @@ footer {
         padding: 11px 17px;
         font-size: 13px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ==========================================
-     NAVIGATION
-========================================== -->
+<!-- ================= NAVIGATION ================= -->
 
 <header>
+<nav class="navbar container">
 
-    <nav class="navbar container">
+    <a href="#home" class="logo">KR<span>.</span></a>
 
-        <a href="#home" class="logo">KR<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Open menu" aria-expanded="false">
+        ☰
+    </button>
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-            ☰
-
-        </button>
-
-        <ul class="nav-links" id="navLinks">
-
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
+</nav>
 </header>
 
-
-<!-- ==========================================
-     HERO SECTION
-========================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-    <div class="container hero-grid">
+<div class="container hero-grid">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <p class="hero-label">
-                WELCOME TO MY PORTFOLIO
-            </p>
+        <p class="hero-label">WELCOME TO MY PORTFOLIO</p>
 
-            <h1>
-                Hi, I'm <span class="name-highlight">Karan Raj</span>
-            </h1>
+        <h1>
+            Hi, I'm <span class="name-highlight">Karan Raj</span>
+        </h1>
 
-            <h2 class="typing-heading">
-                I'm into <span id="typingText"></span><span class="cursor">|</span>
-            </h2>
+        <h2 class="typing-heading">
+            I'm into <span id="typingText"></span><span class="cursor">|</span>
+        </h2>
 
-            <p class="hero-description">
+        <p class="hero-description">
+            BCA Student | Cybersecurity Enthusiast | Generative AI Learner.
+            Passionate about technology, ethical hacking, artificial
+            intelligence and building innovative digital experiences.
+        </p>
 
-                BCA Student | Cybersecurity Enthusiast | Generative AI Learner.
-
-                Passionate about technology, ethical hacking,
-                artificial intelligence and building innovative
-                digital experiences.
-
-            </p>
-
-            <div class="buttons">
-
-                <a href="#projects" class="btn">
-                    Explore My Work
-                </a>
-
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROFILE PHOTO -->
-
-        <div class="hero-image-wrapper">
-
-            <div class="image-glow"></div>
-
-            <img
-                src="karan.jpg"
-                alt="Karan Raj - Profile Photo"
-                class="profile-image">
-
-            <div class="image-caption">
-
-                <span class="status-dot"></span>
-
-                Open to learning & opportunities
-
-            </div>
-
+        <div class="buttons">
+            <a href="#projects" class="btn">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
         </div>
 
     </div>
 
+    <div class="hero-image-wrapper">
+
+        <div class="image-glow"></div>
+
+        <!-- PHOTO FILE NAME: profile.png -->
+        <img src="profile.png"
+             alt="Karan Raj Profile Photo"
+             class="profile-image"
+             onerror="this.onerror=null;this.src='https://placehold.co/400x500/111111/ffffff?text=Karan+Raj';">
+
+        <div class="image-caption">
+            <span class="status-dot"></span>
+            Open to learning & opportunities
+        </div>
+
+    </div>
+
+</div>
 </section>
 
-
-<!-- ==========================================
-     ABOUT SECTION
-========================================== -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
+<div class="container">
 
-    <div class="container">
+    <h2 class="section-title">
+        About <span class="highlight">Me</span>
+    </h2>
 
-        <h2 class="section-title">
-            About <span class="highlight">Me</span>
-        </h2>
+    <p class="section-subtitle">A little introduction about myself.</p>
 
-        <p class="section-subtitle">
-            A little introduction about myself.
-        </p>
+    <div class="about-grid">
 
+        <div class="about-text">
+            <p>
+                Hello! I'm Karan Raj, currently pursuing Bachelor
+                of Computer Applications (BCA) at RKDF University, Ranchi.
+            </p>
 
-        <div class="about-grid">
+            <p>
+                My primary interests are Cybersecurity, Ethical Hacking,
+                Artificial Intelligence and Generative AI. I am continuously
+                improving my technical skills through practical learning,
+                experimentation and projects.
+            </p>
 
-            <div class="about-text">
+            <p>
+                My goal is to become a skilled cybersecurity professional
+                and contribute to making the digital world safer.
+            </p>
+        </div>
 
-                <p>
+        <div class="about-info">
 
-                    Hello! I'm Karan Raj, currently pursuing
-                    Bachelor of Computer Applications (BCA)
-                    at RKDF University, Ranchi.
-
-                </p>
-
-                <p>
-
-                    My primary interests are Cybersecurity,
-                    Ethical Hacking, Artificial Intelligence
-                    and Generative AI.
-
-                    I am continuously improving my technical
-                    skills through practical learning,
-                    experimentation and projects.
-
-                </p>
-
-                <p>
-
-                    My goal is to become a skilled
-                    cybersecurity professional and contribute
-                    to making the digital world safer.
-
-                </p>
-
+            <div class="info-item">
+                <strong>Name</strong>
+                <span>Karan Raj</span>
             </div>
 
+            <div class="info-item">
+                <strong>Education</strong>
+                <span>Bachelor of Computer Applications</span>
+            </div>
 
-            <div class="about-info">
+            <div class="info-item">
+                <strong>University</strong>
+                <span>RKDF University, Ranchi</span>
+            </div>
 
-                <div class="info-item">
+            <div class="info-item">
+                <strong>Graduation</strong>
+                <span>2027</span>
+            </div>
 
-                    <strong>Name</strong>
-
-                    <span>Karan Raj</span>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>Education</strong>
-
-                    <span>Bachelor of Computer Applications</span>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>University</strong>
-
-                    <span>RKDF University, Ranchi</span>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>Graduation</strong>
-
-                    <span>2027</span>
-
-                </div>
-
-
-                <div class="info-item">
-
-                    <strong>Career Interests</strong>
-
-                    <span>Cybersecurity & Generative AI</span>
-
-                </div>
-
+            <div class="info-item">
+                <strong>Career Interests</strong>
+                <span>Cybersecurity & Generative AI</span>
             </div>
 
         </div>
-
     </div>
-
+</div>
 </section>
 
-
-<!-- ==========================================
-     SKILLS SECTION
-========================================== -->
+<!-- ================= SKILLS ================= -->
 
 <section class="dark-section" id="skills">
+<div class="container">
 
-    <div class="container">
+    <h2 class="section-title">
+        My <span class="highlight">Skills</span>
+    </h2>
 
-        <h2 class="section-title">
-            My <span class="highlight">Skills</span>
-        </h2>
+    <p class="section-subtitle">Technologies and tools I am learning.</p>
 
-        <p class="section-subtitle">
-            Technologies and tools I am learning.
-        </p>
+    <div class="skills-grid">
 
+        <div class="skill-card">
+            <h3>C Programming</h3>
+            <p>Programming fundamentals, logic building and problem solving.</p>
+        </div>
 
-        <div class="skills-grid">
+        <div class="skill-card">
+            <h3>C++</h3>
+            <p>Object-oriented programming and programming concepts.</p>
+        </div>
 
+        <div class="skill-card">
+            <h3>Java</h3>
+            <p>Core Java and object-oriented development.</p>
+        </div>
 
-            <div class="skill-card">
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Creating structured and accessible web pages.</p>
+        </div>
 
-                <h3>C Programming</h3>
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Responsive layouts and modern web design.</p>
+        </div>
 
-                <p>
-                    Programming fundamentals,
-                    logic building and problem solving.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>C++</h3>
-
-                <p>
-                    Object-oriented programming
-                    and programming concepts.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>Java</h3>
-
-                <p>
-                    Core Java and object-oriented
-                    development.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>HTML</h3>
-
-                <p>
-                    Creating structured
-                    and accessible web pages.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>CSS</h3>
-
-                <p>
-                    Responsive layouts
-                    and modern web design.
-                </p>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>Cybersecurity</h3>
-
-                <p>
-                    Learning security fundamentals,
-                    networking and ethical practices.
-                </p>
-
-            </div>
-
-
+        <div class="skill-card">
+            <h3>Cybersecurity</h3>
+            <p>Learning security fundamentals, networking and ethical practices.</p>
         </div>
 
     </div>
-
+</div>
 </section>
 
-
-<!-- ==========================================
-     PROJECTS SECTION
-========================================== -->
+<!-- ================= PROJECTS ================= -->
 
 <section id="projects">
+<div class="container">
 
-    <div class="container">
+    <h2 class="section-title">
+        My <span class="highlight">Projects</span>
+    </h2>
 
-        <h2 class="section-title">
-            My <span class="highlight">Projects</span>
-        </h2>
+    <p class="section-subtitle">Projects from my learning journey.</p>
 
-        <p class="section-subtitle">
-            Projects from my learning journey.
-        </p>
+    <div class="projects-grid">
 
+        <div class="project-card">
+            <h3>Cybersecurity & Gen AI Portfolio</h3>
 
-        <div class="projects-grid">
+            <p>
+                A professional responsive portfolio website
+                showcasing my skills, projects and learning journey.
+            </p>
 
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI</span>
+            </div>
 
-            <div class="p
+            <a class="project-link"
+               href="https://karanraj3106-cmyk.github.io"
+               target="_blank" rel="noopener">
+               View Portfolio →
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>Voice Assistant</h3>
+
+            <p>
+                A browser-based voice assistant using speech
+                recognition and text-to-speech functionality.
+            </p>
+
+            <div class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Speech API</span>
+                <span class="tag">Web Technology</span>
+            </div>
+
+            <a class="project-link" href="#home">
+                Explore This Website →
+            </a>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="dark-section" id="experience">
+<div class="container">
+
+    <h2 class="section-title">
+        My <span class="highlight">Experience</span>
+    </h2>
+
+    <p class="section-subtitle">
+        My professional experience and learning journey.
+    </p>
+
+    <div id="experienceList">
+
+        <div class="timeline-item">
+            <h3>BCA Student & Technology Learner</h3>
+            <div class="
