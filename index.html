@@ -1,122 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080a0f">
-<meta name="description" content="Karan Raj — BCA student exploring Cybersecurity, Ethical Hacking and Generative AI.">
-<title>Karan Raj — Cybersecurity × GenAI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#080a0f;--surface:rgba(19,23,33,.78);--surface2:#151a25;--text:#f5f7fb;--muted:#a6afc0;--line:rgba(255,255,255,.12);--accent:#9dff72;--accent2:#6ee7ff;--shadow:0 24px 80px #0007;--radius:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.65;overflow-x:hidden;transition:background .3s,color .3s}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 15% 10%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 34%),radial-gradient(ellipse at 90% 35%,color-mix(in srgb,var(--accent2) 10%,transparent),transparent 33%)}
-body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.13;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
-a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font-weight:800;font-size:1.22rem;letter-spacing:-.07em}.brand i{font-style:normal;color:var(--accent)}.navlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:.84rem}.navlinks a:hover{color:var(--accent)}
-.pill,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-size:.84rem;font-weight:800;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}.btn:hover,.pill:hover{transform:translateY(-2px);border-color:var(--accent)}.primary{background:var(--accent);color:#10140c;border-color:var(--accent)}.theme-select{background:var(--surface2);color:var(--text);max-width:150px}
-.hero{padding:88px 0 78px;min-height:620px;display:flex;align-items:center}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px}.eyebrow,.kicker{font:500 .72rem 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--accent)}.eyebrow{display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";height:1px;width:28px;background:var(--accent)}
-h1{font-size:clamp(3.4rem,7.4vw,6.7rem);line-height:.94;letter-spacing:-.09em;margin:25px 0 24px;max-width:750px}h1 .outline{color:transparent;-webkit-text-stroke:1px var(--text)}.hero-copy{max-width:680px;color:var(--muted);font-size:1.06rem}.hero-copy strong{color:var(--text)}.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.microline{display:flex;gap:20px;flex-wrap:wrap;margin-top:34px;color:var(--muted);font: .7rem 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.04em}.microline span:before{content:"✳";color:var(--accent);margin-right:8px}
-.photo-shell{width:min(100%,370px);justify-self:end;position:relative;padding:11px;border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:30px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 12%,transparent),var(--surface));box-shadow:var(--shadow);transform:rotate(1deg)}.photo-shell:after{content:"";position:absolute;inset:20px -18px -18px 20px;border:1px solid color-mix(in srgb,var(--accent2) 35%,transparent);border-radius:28px;z-index:-1}.profile{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 24%;border-radius:21px}.photo-caption{position:absolute;bottom:26px;left:-25px;background:var(--accent);color:#11150c;padding:12px 16px;border-radius:13px;font:500 .7rem 'DM Mono',monospace;box-shadow:0 12px 40px #0008}.photo-status{position:absolute;right:18px;top:22px;background:#111b;color:var(--accent);border:1px solid #ffffff25;border-radius:999px;padding:7px 10px;font:.65rem 'DM Mono',monospace}
-section{padding:78px 0;border-top:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}h2{font-size:clamp(2.2rem,4.5vw,3.7rem);line-height:1.04;letter-spacing:-.075em;margin:10px 0 0}.section-note{color:var(--muted);max-width:420px;font-size:.9rem}
-.panel{background:var(--surface);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 45px #0002}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:17px}.about-copy p{color:var(--muted);margin-top:0}.about-copy p:last-child{margin-bottom:0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--surface2)}.stat strong{font-size:1.65rem;display:block;letter-spacing:-.06em}.stat span{font-size:.78rem;color:var(--muted)}
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.skill{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;transition:transform .25s,border-color .25s}.skill:hover,.project:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--accent) 60%,transparent)}.icon{display:grid;place-items:center;width:45px;height:45px;border-radius:14px;background:color-mix(in srgb,var(--accent) 10%,transparent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);color:var(--accent);font-size:1.25rem;margin-bottom:18px}h3{font-size:1.15rem;letter-spacing:-.035em;margin:0 0 8px}.skill p,.project p{font-size:.88rem;color:var(--muted);margin:0}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.tag{border:1px solid var(--line);border-radius:999px;padding:5px 9px;font:.65rem 'DM Mono',monospace;color:var(--muted)}
-.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.project{min-height:255px;position:relative;overflow:hidden;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px;transition:transform .25s,border-color .25s}.project:after{content:"";position:absolute;right:-62px;top:-70px;width:170px;height:170px;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);box-shadow:0 0 0 20px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 42px color-mix(in srgb,var(--accent) 2%,transparent)}.project-num{font:.7rem 'DM Mono',monospace;color:var(--accent);margin-bottom:27px}.project .label{font:.66rem 'DM Mono',monospace;color:var(--accent);text-transform:uppercase;margin-top:12px}.project .tags{margin-top:auto;padding-top:18px}
-.timeline{border-left:1px solid var(--line);padding-left:25px;margin-left:8px}.timeline-item{position:relative;padding-bottom:24px}.timeline-item:last-child{padding-bottom:0}.timeline-item:before{content:"";position:absolute;left:-30px;top:8px;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 12%,transparent)}.timeline-item p{color:var(--muted);margin:4px 0}.date{font:.68rem 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
-.contact-card{display:grid;grid-template-columns:1fr .9fr;gap:34px;padding:clamp(26px,5vw,55px);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:28px;background:radial-gradient(ellipse at 90% 0%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 42%),var(--surface);box-shadow:var(--shadow)}.contact-card p{color:var(--muted)}.contact-list{display:flex;flex-direction:column;gap:8px;justify-content:center}.contact-item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.82rem}.contact-item span{color:var(--muted);white-space:nowrap}.contact-item a{overflow-wrap:anywhere}.contact-item a:hover{color:var(--accent)}
-footer{padding:28px 0 36px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font:.68rem 'DM Mono',monospace}
-.assistant-fab{position:fixed;right:20px;bottom:20px;z-index:90;border:1px solid color-mix(in srgb,var(--accent) 70%,transparent);border-radius:999px;padding:13px 17px;background:var(--accent);color:#11150b;font-weight:800;font-size:.82rem;box-shadow:0 12px 40px #0008;cursor:pointer}.assistant{position:fixed;right:20px;bottom:82px;z-index:89;width:min(365px,calc(100vw - 32px));max-height:min(560px,calc(100vh - 120px));overflow:auto;background:var(--surface2);border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);border-radius:23px;box-shadow:var(--shadow);padding:17px;display:none}.assistant.open{display:block}.assistant-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.assistant-top h3{margin:0}.close{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:50%;width:32px;height:32px;cursor:pointer}.assistant p{font-size:.8rem;color:var(--muted);margin:7px 0 12px}.assistant-status{font:.68rem 'DM Mono',monospace;color:var(--accent);margin-bottom:10px}.chatlog{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow:auto;margin:10px 0}.bubble{max-width:94%;padding:10px 12px;border-radius:13px;font-size:.8rem;background:var(--bg);border:1px solid var(--line);align-self:flex-start}.bubble.user{align-self:flex-end;background:color-mix(in srgb,var(--accent) 13%,var(--surface2));border-color:color-mix(in srgb,var(--accent) 35%,transparent)}.quick{display:flex;flex-wrap:wrap;gap:7px}.quick button,.chat-form button,.assistant-actions button{border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text);padding:8px 11px;font-size:.73rem;cursor:pointer}.quick button:hover,.chat-form button:hover,.assistant-actions button:hover{border-color:var(--accent)}.chat-form{display:flex;gap:7px;margin-top:12px}.chat-form input{min-width:0;flex:1;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:10px 12px;color:var(--text);outline:none}.chat-form input:focus{border-color:var(--accent)}.chat-form button{background:var(--accent);color:#10140c;font-weight:800}.assistant-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.assistant-actions button.active{border-color:var(--accent);color:var(--accent)}
-/* theme selector: all requested styles are available in the same portfolio */
-body[data-theme="hacker"]{--bg:#030806;--surface:rgba(5,22,15,.88);--surface2:#071b12;--text:#e7ffef;--muted:#8eb6a0;--line:rgba(109,255,155,.18);--accent:#55ff92;--accent2:#00e5c2;--radius:8px}
-body[data-theme="glass"]{--bg:#10101b;--surface:rgba(255,255,255,.075);--surface2:rgba(255,255,255,.06);--text:#f8f7ff;--muted:#b5b2c9;--line:rgba(255,255,255,.17);--accent:#c6a7ff;--accent2:#7cecff;--radius:26px}
-body[data-theme="minimal"]{--bg:#f6f6f4;--surface:#fff;--surface2:#ecece8;--text:#171717;--muted:#5f5f60;--line:rgba(0,0,0,.13);--accent:#242424;--accent2:#777;--shadow:0 24px 70px #0001}
-body[data-theme="cinematic"]{--bg:#050509;--surface:rgba(20,18,30,.86);--surface2:#171321;--text:#fff8f4;--muted:#b9abb6;--line:rgba(255,195,157,.17);--accent:#ffb36d;--accent2:#f27cff;--radius:10px}
-body[data-theme="glass"] .panel,body[data-theme="glass"] .skill,body[data-theme="glass"] .project{backdrop-filter:blur(22px)}
-body[data-theme="minimal"]:before{background:radial-gradient(ellipse at 15% 10%,#00000008,transparent 35%),radial-gradient(ellipse at 90% 35%,#00000005,transparent 35%)}
-body[data-theme="minimal"]:after{opacity:.05}
-@media(max-width:820px){.navlinks{gap:12px}.navlinks>a:not(.contact-nav){display:none}.theme-select{max-width:115px}.hero{padding:58px 0}.hero-grid{grid-template-columns:1fr;gap:40px}.photo-shell{justify-self:center;width:min(78%,360px);margin:0 auto 10px}.about-grid,.contact-card{grid-template-columns:1fr}.skills{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.section-head{display:block}.section-note{margin-top:13px}.hero{min-height:unset}h1{font-size:clamp(3.1rem,14vw,5.6rem)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style>
-</head>
-<body data-theme="futuristic">
-<header><nav class="wrap"><a class="brand" href="#home">KARAN<i>.</i></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a class="contact-nav" href="#contact">Contact ↗</a><select id="themeSelect" class="pill theme-select" aria-label="Choose portfolio style"><option value="futuristic">AI Futuristic</option><option value="hacker">Hacker Neon</option><option value="glass">Glassmorphism</option><option value="minimal">Minimalist</option><option value="cinematic">3D Cinematic</option></select></div></nav></header>
-<main>
-<section class="hero" id="home" style="border-top:0"><div class="wrap hero-grid"><div><div class="eyebrow">BCA Student · Cybersecurity × GenAI</div><h1>Karan Raj.<br><span class="outline">Securing tomorrow.</span></h1><p class="hero-copy">I’m a BCA student at <strong>RKDF University, Ranchi</strong>, exploring <strong>cybersecurity, ethical hacking, and Generative AI</strong>. I’m building practical skills, learning responsibly, and working toward an IT career where security and AI meet.</p><div class="actions"><a class="btn primary" href="#projects">Explore my work ↓</a><a class="btn" href="#contact">Let’s connect ↗</a><button class="btn" id="hearIntro">▶ Hear introduction</button></div><div class="microline"><span>Ranchi, Jharkhand</span><span>Open to learning & internships</span><span>Ethical by design</span></div></div><div class="photo-shell"><img class="profile" src="profile.png" alt="Karan Raj profile photo"><span class="photo-status">● ONLINE / LEARNING</span><div class="photo-caption">KARAN RAJ · PORTFOLIO</div></div></div></section>
-<section id="about"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / The person behind the screen</div><h2>Curious mind.<br>Security-first mindset.</h2></div><p class="section-note">I want to combine technical understanding with responsible AI to help create safer digital experiences.</p></div><div class="about-grid"><div class="panel about-copy"><p>I’m pursuing a Bachelor of Computer Applications (BCA) at RKDF University, Ranchi. My current focus is building strong foundations in computing while exploring cybersecurity, ethical hacking, and Generative AI.</p><p>I believe the best way to learn is by practising, documenting what I discover, and improving one project at a time. In security, I value permission, responsible testing, and clear communication.</p><p>This portfolio is my growing professional space. As I complete real projects and courses, I’ll add verified results, certificates, and repository links here.</p></div><div class="stats"><div class="stat"><strong>01</strong><span>Learn consistently</span></div><div class="stat"><strong>02</strong><span>Build in public</span></div><div class="stat"><strong>03</strong><span>Practice ethically</span></div><div class="stat"><strong>04</strong><span>Use AI responsibly</span></div></div></div></div></section>
-<section id="skills"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / Areas of focus</div><h2>Where I’m building depth.</h2></div><p class="section-note">These are learning areas rather than claims of professional certification. The page can be updated as skills grow.</p></div><div class="skills">
-<article class="skill"><div class="icon">⌁</div><h3>Cybersecurity</h3><p>Learning the foundations of digital security, common threats, and defensive thinking.</p><div class="tags"><span class="tag">Security fundamentals</span><span class="tag">Networking basics</span><span class="tag">Threat awareness</span></div></article>
-<article class="skill"><div class="icon">⌘</div><h3>Ethical Hacking</h3><p>Exploring authorized lab testing, web security concepts, and structured documentation.</p><div class="tags"><span class="tag">Linux basics</span><span class="tag">Web security</span><span class="tag">Lab practice</span></div></article>
-<article class="skill"><div class="icon">✳</div><h3>Generative AI</h3><p>Exploring AI-assisted research, prompt design, and practical responsible workflows.</p><div class="tags"><span class="tag">Prompting</span><span class="tag">AI tools</span><span class="tag">Automation concepts</span></div></article>
-</div></div></section>
-<section id="projects"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / Portfolio work</div><h2>Ideas becoming projects.</h2></div><p class="section-note">Planned concepts are labelled honestly. Replace them with completed work and GitHub links when ready.</p></div><div class="projects">
-<article class="project"><div class="project-num">01 — AI + SECURITY</div><h3>AI Security Study Assistant</h3><p>A learning project concept that helps organize security notes, explain terms, and generate revision questions with AI-assisted workflows.</p><div class="label">Planned project · Learning</div><div class="tags"><span class="tag">Generative AI</span><span class="tag">Prompt design</span><span class="tag">Documentation</span></div></article>
-<article class="project"><div class="project-num">02 — HANDS-ON PRACTICE</div><h3>Personal Cybersecurity Lab</h3><p>A safe lab notebook for documenting networking fundamentals, authorized practice tasks, observations, and lessons learned.</p><div class="label">Planned project · Lab practice</div><div class="tags"><span class="tag">Linux</span><span class="tag">Networking</span><span class="tag">Ethical testing</span></div></article>
-<article class="project"><div class="project-num">03 — SECURITY AWARENESS</div><h3>Phishing Awareness Guide</h3><p>A beginner-friendly resource to recognize suspicious messages, inspect links carefully, and respond safely to possible phishing.</p><div class="label">Project idea · Awareness</div><div class="tags"><span class="tag">Cyber awareness</span><span class="tag">Research</span><span class="tag">Education</span></div></article>
-<article class="project"><div class="project-num">04 — WEB</div><h3>Interactive Portfolio</h3><p>This responsive portfolio brings together my profile, learning goals, project ideas, contact information, and a local voice-enabled helper.</p><div class="label">Current project · Web</div><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div></article>
-</div></div></section>
-<section id="education"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Education & growth</div><h2>Building the foundation.</h2></div><p class="section-note">College learning paired with self-study and hands-on practice.</p></div><div class="panel"><div class="timeline"><div class="timeline-item"><div class="date">Current education</div><h3>Bachelor of Computer Applications (BCA)</h3><p>RKDF University · Ranchi, Jharkhand, India</p><p>Developing a foundation in computing and programming while exploring cybersecurity and AI.</p></div><div class="timeline-item"><div class="date">Ongoing learning</div><h3>Cybersecurity, Ethical Hacking & Generative AI</h3><p>Focused on responsible study, authorized lab practice, and building demonstrable projects.</p></div></div></div></div></section>
-<section id="contact"><div class="wrap"><div class="contact-card"><div><div class="kicker">05 / Start a conversation</div><h2>Good work starts with a connection.</h2><p>I’m interested in connecting with fellow learners, mentors, collaborators, and internship opportunities in cybersecurity and AI.</p><div class="actions"><a class="btn primary" href="mailto:karanraj31021@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/karan-raj-97a9b4393/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div><div class="contact-list"><div class="contact-item"><span>Email</span><a href="mailto:karanraj31021@gmail.com">karanraj31021@gmail.com</a></div><div class="contact-item"><span>Phone</span><a href="tel:+917061022422">+91 70610 22422</a></div><div class="contact-item"><span>GitHub</span><a href="https://github.com/karanraj3106-cmyk" target="_blank" rel="noopener noreferrer">karanraj3106-cmyk ↗</a></div><div class="contact-item"><span>LinkedIn</span><a href="https://www.linkedin.com/in/karan-raj-97a9b4393/" target="_blank" rel="noopener noreferrer">Karan Raj ↗</a></div><div class="contact-item"><span>Location</span><span>Ranchi, Jharkhand</span></div></div></div></div></section>
-</main>
-<footer class="wrap"><span>© <span id="year"></span> Karan Raj</span><span>CYBERSECURITY × GENERATIVE AI</span><a href="#home">Back to top ↑</a></footer>
-<div class="assistant" id="assistant" role="dialog" aria-label="Karan's portfolio assistant"><div class="assistant-top"><h3>KR Assistant <span style="color:var(--accent)">●</span></h3><button class="close" id="closeAssistant" aria-label="Close assistant">×</button></div><p>Ask about Karan, skills, projects, education, or contact. You can type or use voice. This demo answers from portfolio information; it is not connected to a cloud AI model.</p><div class="assistant-status" id="assistantStatus">Ready · Text and voice available</div><div class="chatlog" id="chatlog" aria-live="polite"><div class="bubble">Hi! I can tell you about Karan’s background, learning areas, projects, and contact details.</div></div><div class="quick"><button data-q="Tell me about Karan">About Karan</button><button data-q="What are his skills?">Skills</button><button data-q="Show his projects">Projects</button><button data-q="How can I contact him?">Contact</button></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Ask a question…" autocomplete="off" aria-label="Ask the assistant"><button type="submit">Send</button></form><div class="assistant-actions"><button id="startVoice">🎙 Speak command</button><button id="stopVoice">Stop speech</button></div></div><button class="assistant-fab" id="assistantFab" aria-expanded="false">✳ Ask / Speak to KR</button>
+
 <script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const body=document.body,themeSelect=document.getElementById('themeSelect');
-themeSelect.addEventListener('change',()=>{body.dataset.theme=themeSelect.value;});
-const panel=document.getElementById('assistant'),fab=document.getElementById('assistantFab'),log=document.getElementById('chatlog'),input=document.getElementById('chatInput'),status=document.getElementById('assistantStatus');
-function openAssistant(){panel.classList.add('open');fab.setAttribute('aria-expanded','true');}
-function closeAssistant(){panel.classList.remove('open');fab.setAttribute('aria-expanded','false');}
-fab.onclick=()=>panel.classList.contains('open')?closeAssistant():openAssistant();document.getElementById('closeAssistant').onclick=closeAssistant;
-function addBubble(text,who){const d=document.createElement('div');d.className='bubble '+(who||'');d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;}
-function speak(text){if(!('speechSynthesis'in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-IN';window.speechSynthesis.speak(u);}
-function answerFor(q){const s=q.toLowerCase();
- if(/hello|hi\b|hey/.test(s))return 'Hello! I’m KR Assistant. I can help you explore Karan’s portfolio.';
- if(/who|about|introduc|background|karan/.test(s))return 'Karan Raj is a BCA student at RKDF University, Ranchi. He is exploring cybersecurity, ethical hacking, and Generative AI and is building his skills through study and practical projects.';
- if(/skill|cyber|hack|ai|gen.?ai/.test(s))return 'Karan is developing knowledge in cybersecurity fundamentals, authorized ethical-hacking lab practice, and Generative AI workflows. These are learning areas, not claims of professional certification.';
- if(/project|work|portfolio/.test(s))return 'The portfolio lists an AI Security Study Assistant, a Personal Cybersecurity Lab, a Phishing Awareness Guide, and this interactive website. The first three are marked as planned concepts.';
- if(/education|college|university|study|bca/.test(s))return 'Karan is pursuing a Bachelor of Computer Applications at RKDF University in Ranchi, Jharkhand.';
- if(/contact|email|phone|call|github|linkedin|reach/.test(s))return 'You can email Karan at karanraj31021@gmail.com, call +91 70610 22422, visit github.com/karanraj3106-cmyk, or open his LinkedIn profile from the Contact section.';
- if(/location|where|ranchi/.test(s))return 'Karan is based in Ranchi, Jharkhand, India.';
- if(/intern|job|career|goal/.test(s))return 'Karan’s career goal is to grow in IT, with a focus on cybersecurity and Generative AI, and to connect with learning, collaboration, and internship opportunities.';
- return 'I can answer questions about Karan’s background, skills, projects, education, career goals, and contact details. Try asking “What are his skills?” or “How can I contact him?”';
-}
-function processQuestion(q,voice=false){if(!q.trim())return;addBubble(q,'user');const a=answerFor(q);addBubble(a,'');status.textContent='Answered from portfolio details';if(voice)speak(a);}
-document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();processQuestion(input.value);input.value='';});
-document.querySelectorAll('.quick button').forEach(b=>b.addEventListener('click',()=>processQuestion(b.dataset.q)));
-const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;let recognition=null;
-document.getElementById('startVoice').onclick=()=>{openAssistant();if(!SpeechRecognition){status.textContent='Voice recognition unavailable in this browser. Try Chrome and allow microphone access.';return;}recognition=new SpeechRecognition();recognition.lang='en-IN';recognition.interimResults=false;recognition.maxAlternatives=1;status.textContent='Listening…';recognition.onresult=e=>{const q=e.results[0][0].transcript;status.textContent='Heard: '+q;processQuestion(q,true);const s=q.toLowerCase();let target=null;if(/about|who|introduc/.test(s))target='about';else if(/skill/.test(s))target='skills';else if(/project|work/.test(s))target='projects';else if(/education|college|study/.test(s))target='education';else if(/contact|email|phone|github|linkedin/.test(s))target='contact';else if(/home|top/.test(s))target='home';if(target)document.getElementById(target).scrollIntoView({behavior:'smooth'});};recognition.onerror=e=>status.textContent='Voice error: '+e.error+'. Check microphone permission.';recognition.onend=()=>{if(status.textContent==='Listening…')status.textContent='Ready · Text and voice available';};recognition.start();};
-document.getElementById('stopVoice').onclick=()=>{if(recognition)recognition.stop();if('speechSynthesis'in 
+/* ==================================
+   KARAN RAJ - VOICE ASSISTANT
+   Indian English Male Voice
+================================== */
 
-function speakText(text) {
-  const synth = window.speechSynthesis;
-  synth.cancel();
+const synth = window.speechSynthesis;
+let selectedVoice = null;
 
-  const msg = new SpeechSynthesisUtterance(text);
-  msg.lang = "en-IN";
-  msg.rate = 0.92;
-  msg.pitch = 0.85;
-  msg.volume = 1;
+// Find Indian English voice
+function loadIndianVoice() {
+    const voices = synth.getVoices();
 
-  const voices = synth.getVoices();
+    selectedVoice =
+        voices.find(v =>
+            v.lang === "en-IN" &&
+            /male|man|ravi/i.test(v.name)
+        ) ||
+        voices.find(v => v.lang === "en-IN") ||
+        voices.find(v => v.lang.startsWith("en-IN")) ||
+        voices.find(v => v.lang.startsWith("en-GB")) ||
+        voices.find(v => v.lang.startsWith("en-US"));
 
-  const indianVoice = voices.find(v =>
-    v.lang === "en-IN" &&
-    /Google.*India|Microsoft.*India/i.test(v.name)
-  );
-
-  if (indianVoice) {
-    msg.voice = indianVoice;
-  }
-
-  synth.speak(msg);
+    console.log("Selected voice:", selectedVoice?.name);
 }
 
+loadIndianVoice();
+synth.onvoiceschanged = loadIndianVoice;
+
+
+// Speak text
+function speak(text) {
+    if (!text) return;
+
+    synth.cancel();
+
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = selectedVoice?.lang || "en-IN";
+    speech.voice = selectedVoice;
+    speech.rate = 0.90;
+    speech.pitch = 0.85;
+    speech.volume = 1;
+
+    synth.speak(speech);
 }
 
-document.getElementById('hearIntro').onclick=()=>{const intro='Hi, I am Karan Raj, a BCA student at RKDF University in Ranchi. I am exploring cybersecurity, ethical hacking, and Generative AI. Thank you for visiting my portfolio.';if('speechSynthesis'in window)speak(intro);else alert(intro);};
+
+// Stop speaking
+function stopSpeaking() {
+    synth.cancel();
+}
+
+
+// Hear portfolio introduction
+const hearIntro = document.getElementById("hearIntro");
+
+if (hearIntro) {
+    hearIntro.addEventListener("click", () => {
+        speak(
+            "Hello! I am Karan Raj. " +
+            "I am a Bachelor of Computer Applications student " +
+            "at RKDF University, Ranchi. " +
+            "My interests include Cybersecurity, Ethical Hacking, " +
+            "and Generative Artificial Intelligence. " +
+            "I am passionate about learning new technologies, " +
+            "building projects, and developing my technical skills. " +
+            "Thank you for visiting my portfolio."
+        );
+    });
+}
+
+
+// Voice assistant elements
+const assistant = document.querySelector(".assistant");
+const assistantFab = document.querySelector(".assistant-fab");
+const closeAssistant = document.querySelector(".close");
+const chatlog = document.querySelector(".chatlog");
+const chatForm = document.querySelector(".chat-form");
+const chatInput = document.querySelector(".chat-form input");
+const assistantStatus = document.querySelector(".assistant-status");
+
+
+// Open assistant
+if (assistantFab && assistant) {
+    assistantFab.addEventListener("click", () => {
+        assistant.classList.add("open");
+
+        if (assistantStatus) {
+            assistantStatus.textContent =
+                "ONLINE • INDIAN ENGLISH VOICE";
+        }
+    });
+}
+
+
+// Close assistant
+if (closeAssistant && assistant) {
+    closeAssistant.addEventListener("click", () => {
+        assistant.classList.remove("open");
+        stopSpeaking();
+    });
+}
+
+
+// Add chat message
+function addMessage(text, type) {
+    if (!chatlog) return;
+
+    const bubble = document.createElement("div");
+    bubble.className = "bubble " + type;
+    bubble.textContent = text;
+
+    chatlog.appendChild(bubble);
+    chatlog.scrollTop = chatlog.scrollHeight;
+}
+
+
+// Assistant response
+function getResponse(message) {
+    const msg = message.toLowerCase();
+
+    if (msg.includes("hello") || msg.includes("hi") ||
+        msg.includes("hey")) {
+        return "Hello! Welcome to Karan Raj's portfolio. How can I help you?";
+    }
+
+    if (msg.includes("your name") || msg.includes("who are you")) {
+        return "I am Karan Raj's portfolio voice assistant.";
+    }
+
+    if (msg.includes("karan")) {
+        return "Karan Raj is a BCA student at RKDF University, Ranchi.";
+    }
+
+    if (msg.includes("education") || msg.includes("college")) {
+        return "Karan is pursuing Bachelor of Computer Applications at RKDF University in Ranchi.";
+    }
+
+    if (msg.includes("skill") || msg.includes("programming")) {
+        return "Karan is learning C, C++, Java, HTML, CSS, Cybersecurity, and Generative AI.";
+    }
+
+    if (msg.includes("cybersecurity") || msg.includes("hacking")) {
+        return "Karan is interested in Cybersecurity and Ethical Hacking, with a focus on responsible and authorized learning.";
+    }
+
+    if (msg.includes("ai") || msg.includes("artificial intelligence")) {
+        return "Karan is exploring Generative AI and its practical applications.";
+    }
+
+    if (msg.includes("project") || msg.includes("portfolio")) {
+        return "This portfolio is one of Karan's web development projects. He is also exploring AI and cybersecurity projects.";
+    }
+
+    if (msg.includes("contact") || msg.includes("email")) {
+        return "You can contact Karan through the contact details available in the Contact section of this portfolio.";
+    }
+
+    if (msg.includes("thank")) {
+        return "You're welcome! Thank you for visiting the portfolio.";
+    }
+
+    if (msg.includes("bye") || msg.includes("goodbye")) {
+        return "Goodbye! Have a wonderful day.";
+    }
+
+    return "Sorry, I am still learning. You can ask me about Karan, his education, skills, projects, or interests.";
+}
+
+
+// Chat form
+if (chatForm) {
+    chatForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (!chatInput) return;
+
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addMessage(message, "user");
+        chatInput.value = "";
+
+        const response = getResponse(message);
+
+        setTimeout(() => {
+            addMessage(response, "");
+            speak(response);
+        }, 400);
+    });
+}
+
+
+// Quick reply buttons
+document.querySelectorAll(".quick button").forEach(button => {
+    button.addEventListener("click", () => {
+        const message = button.textContent.trim();
+
+        if (!message) return;
+
+        addMessage(message, "user");
+
+        const response = getResponse(message);
+
+        setTimeout(() => {
+            addMessage(response, "");
+            speak(response);
+        }, 300);
+    });
+});
+
+
+// Stop voice when page is hidden
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        stopSpeaking();
+    }
+});
+
 </script>
-</body>
-</html>
